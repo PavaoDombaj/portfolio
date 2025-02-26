@@ -1,0 +1,60 @@
+import React from "react";
+import {
+  Navbar,
+  Collapse,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+
+function NavList() {
+  return (
+    <ul className="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-6">
+      <Typography as="li" variant="small" className="p-1 font-medium">
+        <a href="#" className=" hover:text-blue-500 transition-colors">
+          Home
+        </a>
+      </Typography>
+      <Typography as="li" variant="small" className="p-1 font-medium">
+        <a href="#" className="hover:text-blue-500 transition-colors">
+          About
+        </a>
+      </Typography>
+    </ul>
+  );
+}
+
+export function NavbarSimple() {
+  const [openNav, setOpenNav] = React.useState(false);
+
+  return (
+    <Navbar className="mx-auto px-100 py-3 max-w-full bg-[#0a0b0d] border-0 drop-shadow-md ">
+      <div className="flex items-center justify-between w-full">
+        {/* Lijeva strana - Ime */}
+        <Typography as="a" href="#" variant="h6" className="py-1.5 ">
+          Pavao Dombaj
+        </Typography>
+        
+        {/* Desna strana - Navigacija i hamburger menu */}
+        <div className="flex items-center gap-4">
+          <div className="hidden lg:flex">
+            <NavList />
+          </div>
+          <IconButton
+            variant="text"
+            className="lg:hidden"
+            onClick={() => setOpenNav(!openNav)}
+          >
+            {openNav ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
+          </IconButton>
+        </div>
+      </div>
+      
+      <Collapse open={openNav}>
+        <NavList />
+      </Collapse>
+    </Navbar>
+  );
+}
+
+export default NavbarSimple;
