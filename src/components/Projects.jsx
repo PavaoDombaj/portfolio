@@ -25,10 +25,10 @@ const projectData = [
 const Projects = () => {
   return (
     <section className='w-full px-6 bg-[#131313] mt-5'>
-      <h1 className="font-bold text-4xl underline-offset-5 underline">
+      <h1 className="font-bold text-4xl underline-offset-5 underline text-white">
         My Projects
       </h1>
-      <p className="mt-5 mb-5 text-xl">Ovdje mozete vidjeti neke od mojih projekata:</p>
+      <p className="mt-5 mb-5 text-xl text-white">Ovdje mozete vidjeti neke od mojih projekata:</p>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
         {projectData.map((project, index) => (

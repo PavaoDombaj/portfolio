@@ -22,13 +22,13 @@ const Hero = () => {
   return (
     <section className="relative w-full h-screen flex items-center justify-center px-6 bg-[#131313] mt-5">
       {/* VIDEO POZADINA */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <video
           ref={videoRef}
           autoPlay
           loop
           muted
-          className="w-full h-full object-cover opacity-5"
+          className="w-full h-full object-cover opacity-5 pointer-events-none"
         >
           <source src="/videos/e.mp4" type="video/mp4" />
         </video>
@@ -41,7 +41,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl font-bold text-gray-900 dark:text-white"
+            className="text-4xl font-bold text-white"
           >
             Ja sam <span className="text-red-600 ">Pavao Dombaj.</span>
           </motion.h1>
@@ -50,7 +50,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="mt-4 text-lg text-gray-600 dark:text-gray-300"
+            className="mt-4 text-lg text-gray-300"
           >
             Student računarstva & web developer. Gradim moderne aplikacije s{" "}
             <span className="font-bold">Reactom</span> i{" "}
@@ -64,23 +64,22 @@ const Hero = () => {
             className="mt-6 flex justify-center md:justify-start gap-4"
           >
             <a
-              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/PavaoDombaj"
               className="text-gray-700 dark:text-white text-2xl hover:text-blue-500"
             >
               <FaGithub />
             </a>
             <a
-              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/pavao-dombaj-2b55302b5/"
               className="text-gray-700 dark:text-white text-2xl hover:text-blue-500"
             >
               <FaLinkedin />
             </a>
-            <a
-              href="#"
-              className="text-gray-700 dark:text-white text-2xl hover:text-blue-500"
-            >
-              <FaTwitter />
-            </a>
+           
           </motion.div>
 
           <motion.a

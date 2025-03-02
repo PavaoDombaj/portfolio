@@ -11,7 +11,7 @@ const ProjectCard = ({ project }) => {
 
       {/* Naziv i kratak opis */}
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{project.name}</div>
+        <div className="font-bold text-xl mb-2 text-red-600">{project.name}</div>
         <p className="text-gray-300 text-base">{project.shortDescription}</p>
       </div>
 
