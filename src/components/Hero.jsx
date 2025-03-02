@@ -20,7 +20,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center px-6 bg-[#131313] mt-5">
+    <section id=" "className="relative w-full flex items-center justify-center px-6 bg-[#131313] mt-5">
       {/* VIDEO POZADINA */}
       <div className="absolute inset-0 pointer-events-none">
         <video
