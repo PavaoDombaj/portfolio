@@ -1,17 +1,27 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faNodeJs, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faHtml5, faCss3Alt } from '@fortawesome/free-brands-svg-icons';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faReact,
+  faNodeJs,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import { faHtml5, faCss3Alt } from "@fortawesome/free-brands-svg-icons";
 
 const ProjectCard = ({ project }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden bg-[#191818] drop-shadow-2xl transform transition-transform duration-300 ease-in-out hover:scale-105">
       {/* Slika projekta */}
-      <img className="w-full h-48 object-cover" src={project.image} alt={project.name} />
+      <img
+        className="w-full h-48 object-cover"
+        src={project.images && project.images[0]}
+        alt={project.name}
+      />
 
       {/* Naziv i kratak opis */}
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2 text-red-600">{project.name}</div>
+        <div className="font-bold text-xl mb-2 text-red-600">
+          {project.name}
+        </div>
         <p className="text-gray-300 text-base">{project.shortDescription}</p>
       </div>
 
@@ -19,7 +29,11 @@ const ProjectCard = ({ project }) => {
       <div className="px-6 py-4">
         <div className="flex space-x-3 j">
           {project.technologies.map((tech, index) => (
-            <FontAwesomeIcon key={index} icon={tech} className="text-xl text-blue-500" />
+            <FontAwesomeIcon
+              key={index}
+              icon={tech}
+              className="text-xl text-blue-500"
+            />
           ))}
         </div>
       </div>
@@ -41,7 +55,7 @@ const ProjectCard = ({ project }) => {
       {/* Link za detalje */}
       <div className="px-6 py-4">
         <a
-          href={project.redirectUrl}
+          href={`/project/${project.slug}`}
           className="text-blue-500 hover:text-blue-700"
         >
           See Project Details

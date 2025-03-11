@@ -2,27 +2,9 @@ import React from "react";
 import ProjectCard from "./ProjectCard";
 import { faReact, faNodeJs, faHtml5, faCss3Alt } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
+import projectData from "./ProjectData"; 
 
-const projectData = [
-  {
-    name: "Bookly",
-    image: "/images/bookly.png",
-    shortDescription: "Rezerviranje termina frizerskih i ostalih usluga",
-    description: "",
-    redirectUrl: "/projects/bookly",
-    github: "",
-    technologies: [faReact, faNodeJs, faHtml5, faCss3Alt],
-  },
-  {
-    name: "This Portfolio",
-    image: "/images/portfolio.png",
-    shortDescription: "Tu se trenutno nalazis :)",
-    description: "",
-    redirectUrl: "",
-    github: null,
-    technologies: [faReact, faHtml5, faCss3Alt],
-  },
-];
+
 
 const Projects = () => {
   return (
@@ -78,3 +60,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

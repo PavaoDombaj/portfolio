@@ -28,7 +28,7 @@ const Hero = () => {
           autoPlay
           loop
           muted
-          className="w-full h-full object-cover opacity-5 pointer-events-none"
+          className="w-full h-full object-cover opacity-7 pointer-events-none"
         >
           <source src="/videos/e.mp4" type="video/mp4" />
         </video>
