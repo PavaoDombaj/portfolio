@@ -4,96 +4,22 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #131313;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  flex-grow: 1;
 }
 
 body {
   margin: 0;
-  width: 100vw;
-  min-height: 100vh; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  overflow-x: hidden;
-  background-color: #131313;
-  color: #f3f4f6;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0a;
 }
 
-/* Linkovi */
-a {
-  font-weight: 500;
-  color: #ae0303;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-}
-a:hover {
-  color: #ed5252;
-}
-
-/* Glavni container */
 #root {
   width: 100%;
-  min-height: 100vh; 
-  display: flex;
-  flex-direction: column;
-}
-
-/* Sekcije */
-section {
-  width: 100%;
-  max-width: 1200px;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-/* Dugmad */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 10px 16px;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #000000;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-button:hover {
-  background-color: #1d4ed8;
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #cd0000;
-    background-color: #131313;
-  }
-  body {
-    background-color: #131313;
-    color: #ffffff;
-  }
-  a {
-    color: #cd0000;
-  }
-  a:hover {
-    color: #da5252;
-  }
-  button {
-    background-color: #f63b3b;
-  }
-  button:hover {
-    background-color: #eb2525;
-  }
+  min-height: 100vh;
+  background-color: #0a0a0a;
 }

@@ -4,6 +4,7 @@ import {
   faHtml5,
   faCss3Alt,
 } from "@fortawesome/free-brands-svg-icons";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 const projectData = [
   {
@@ -21,6 +22,7 @@ Ovo je bio moj prvi veći projekt i, iako je predstavljao ogroman izazov za sred
       { icon: faNodeJs, iconName: "Node.js" },
       { icon: faHtml5, iconName: "HTML5" },
       { icon: faCss3Alt, iconName: "CSS3" },
+      { icon: faDatabase, iconName: "MongoDB" },
     ],
   },
   {

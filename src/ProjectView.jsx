@@ -1,161 +1,218 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Slider from "react-slick";
 import NavbarSimple from "./components/NavbarSimple";
 import projects from "./components/ProjectData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const ProjectView = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const project = projects.find((p) => p.slug === slug);
-  const videoRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.45;
-    }
-  }, []);
+  const handleNavigation = (section) => {
+    navigate(`/#${section}`);
+  };
 
   if (!project) {
     return (
-      <div className="text-center text-3xl text-red-500 mt-10">
-        Projekt nije pronađen!
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-red-500 mb-4">Project Not Found</h2>
+          <button 
+            onClick={() => handleNavigation('home')}
+            className="inline-block px-6 py-3 text-lg font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+          >
+            Return Home
+          </button>
+        </div>
       </div>
     );
   }
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: project.images.length > 1,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: project.images.length > 1,
     autoplaySpeed: 3000,
   };
 
+  const openImage = (index) => {
+    setSelectedImage(project.images[index]);
+    setCurrentImageIndex(index);
+  };
+
+  const closeImage = () => {
+    setSelectedImage(null);
+  };
+
+  const nextImage = () => {
+    const nextIndex = (currentImageIndex + 1) % project.images.length;
+    setSelectedImage(project.images[nextIndex]);
+    setCurrentImageIndex(nextIndex);
+  };
+
+  const prevImage = () => {
+    const prevIndex = (currentImageIndex - 1 + project.images.length) % project.images.length;
+    setSelectedImage(project.images[prevIndex]);
+    setCurrentImageIndex(prevIndex);
+  };
+
   return (
-    <div className="relative bg-gray-900 text-white min-h-screen overflow-hidden">
-      {/* VIDEO POZADINA */}
-      <div className="absolute inset-0 pointer-events-none">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          className="w-full h-full object-cover opacity-4 pointer-events-none"
-        >
-          <source src="/videos/a.mp4" type="video/mp4" />
-        </video>
-      </div>
+    <div className="min-h-screen bg-[#0a0a0a]">
       <NavbarSimple />
 
-      <section className="max-w-7xl mx-auto px-6 py-10 flex flex-col items-center justify-center lg:flex-row gap-10 w-full">
-        {/* Lijevi dio - sadrzaj */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="w-full lg:w-2/3 bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col"
-        >
-          {/* Naslov */}
-          <motion.h1
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold text-red-500 mb-4 text-center"
-          >
-            {project.name}
-          </motion.h1>
-
-          {/* Opis */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="relative max-w-7xl mx-auto px-6 py-20"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Lijeva strana - Slike */}
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg text-gray-300 leading-relaxed mb-6 overflow-auto max-h-48 md:max-h-96"
-            style={{ whiteSpace: "pre-line" }}
-          >
-            {project.description}
-          </motion.div>
-
-          {/* Tehnologije */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-wrap gap-4 justify-center mt-4"
-          >
-            {project.technologies &&
-              project.technologies.map((tech, index) => (
-                <div key={index} className="relative group">
-                  <FontAwesomeIcon
-                    icon={tech.icon}
-                    size="2x"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  />
-                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                    {tech.iconName}
-                  </span>
-                </div>
-              ))}
-          </motion.div>
-
-          {/* Galerija slika */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="bg-[#0a0a0a]/50 backdrop-blur-sm rounded-xl p-6 border border-blue-500/10"
           >
             <Slider {...settings} className="rounded-lg overflow-hidden">
-              {project.images &&
-                project.images.map((image, index) => (
+              {project.images.map((image, index) => (
+                <div key={index} className="relative h-96 cursor-pointer" onClick={() => openImage(index)}>
                   <img
-                    key={index}
                     src={image}
                     alt={`${project.name} - ${index + 1}`}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-full object-cover rounded-lg hover:opacity-90 transition-opacity duration-300"
                   />
-                ))}
+                </div>
+              ))}
             </Slider>
           </motion.div>
 
-          {/* GitHub & Link */}
+          {/* Desna strana - Sadržaj */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-6 flex justify-center gap-4" // Centrirani gumbi
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="bg-[#0a0a0a]/50 backdrop-blur-sm rounded-xl p-8 border border-blue-500/10"
           >
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-md transition"
-              >
-                GitHub Repo
-              </a>
-            )}
-            {project.redirectUrl && (
-              <a
-                href={project.redirectUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md transition"
-              >
-                Pogledaj projekt
-              </a>
-            )}
+            <h1 className="text-4xl font-bold mb-6">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                {project.name}
+              </span>
+            </h1>
+
+            <div className="prose prose-invert max-w-none mb-8">
+              <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
+                {project.description}
+              </p>
+            </div>
+
+            {/* Tehnologije */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold text-gray-300 mb-4">Technologies Used</h3>
+              <div className="flex flex-wrap gap-3">
+                {project.technologies.map((tech, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400"
+                  >
+                    <FontAwesomeIcon icon={tech.icon} className="text-sm" />
+                    <span className="text-sm">{tech.iconName}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Linkovi */}
+            <div className="flex gap-4">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 px-6 py-3 text-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+                >
+                  View on GitHub
+                </a>
+              )}
+              {project.redirectUrl && (
+                <button
+                  onClick={() => handleNavigation('projects')}
+                  className="flex-1 px-6 py-3 text-center rounded-lg border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-all duration-300"
+                >
+                  Back to Projects
+                </button>
+              )}
+            </div>
           </motion.div>
-        </motion.div>
-      </section>
+        </div>
+      </motion.section>
+
+      {/* Image Popup */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+            onClick={closeImage}
+          >
+            <div className="relative max-w-4xl w-full mx-4">
+              <button
+                className="absolute top-4 right-4 text-white hover:text-blue-400 transition-colors duration-300 z-10"
+                onClick={closeImage}
+              >
+                <FontAwesomeIcon icon={faTimes} className="text-2xl" />
+              </button>
+              
+              {project.images.length > 1 && (
+                <>
+                  <button
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-blue-400 transition-colors duration-300 z-10"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      prevImage();
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faChevronLeft} className="text-2xl" />
+                  </button>
+                  <button
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-blue-400 transition-colors duration-300 z-10"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      nextImage();
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faChevronRight} className="text-2xl" />
+                  </button>
+                </>
+              )}
+
+              <motion.img
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                src={selectedImage}
+                alt={`${project.name} - ${currentImageIndex + 1}`}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
