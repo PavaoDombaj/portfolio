@@ -10,7 +10,7 @@ const projectData = [
   {
     name: "Bookly",
     slug: "bookly",
-    images: ["/images/bookly/1.png", "/images/bookly/2.png"],
+    images: ["/images/bookly/1.png", "/images/bookly/2.jpg", "/images/bookly/3.jpg", "/images/bookly/4.jpg", "/images/bookly/5.jpg", "/images/bookly/6.jpg"],
     shortDescription: "Rezerviranje termina frizerskih i ostalih usluga",
     description: `Bookly je web aplikacija osmišljena za brzo i jednostavno rezerviranje frizerskih termina. Razvio sam je kao završni rad u srednjoj školi, inspiriran vlastitim frustracijama oko naručivanja kod barbera – dugog čekanja na odgovor i izgubljenog vremena.
 Ova aplikacija omogućava veću fleksibilnost i praktičnost kako za klijente, tako i za frizerske salone. Iako još nije službeno pokrenuta, planiram je dovršiti i objaviti. Trenutno radim na ispravljanju bugova i dodavanju novih funkcionalnosti.
@@ -42,7 +42,7 @@ Ovo je bio moj prvi veći projekt i, iako je predstavljao ogroman izazov za sred
       Ovo nije samo statična stranica – to je moj razvojni put, koji ću konstantno nadograđivati i poboljšavati! 🚀
     `,
     redirectUrl: "/",
-    github: null,
+    github: "https://github.com/PavaoDombaj/portfolio",
     technologies: [
       { icon: faReact, iconName: "React" },
       { icon: faHtml5, iconName: "HTML5" },
