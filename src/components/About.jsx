@@ -45,8 +45,7 @@ const About = () => {
               </span>
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              Pozdrav! Zovem se Pavao Dombaj, rođen sam 2005. godine. Završio sam školu za tehničara za računalstvo, a trenutno studiram računarstvo na 1. godini Tehničkog fakulteta u Rijeci (RITEH). Strastven sam prema tehnologiji i razvoju softvera, te stalno radim na unapređenju svojih vještina u programiranju.
-            </p>
+            Pozdrav! Ja sam Pavao Dombaj, rođen 2005. godine. Završio sam školu za tehničara za računalstvo, a trenutno studiram računarstvo na 1. godini Tehničkog fakulteta u Rijeci (RITEH). Strastven sam prema tehnologiji i razvoju softvera te kontinuirano radim na usavršavanju svojih programerskih vještina.</p>
             <motion.a
               href="/cv.pdf"
               target="_blank"
