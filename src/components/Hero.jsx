@@ -7,7 +7,7 @@ import {
   FaNode,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-import profile from "../assets/profile.png";
+import profile from "../assets/avatar.png";
 import { useEffect, useRef } from "react";
 
 const Hero = () => {
@@ -20,7 +20,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative w-full min-h-screen flex items-center justify-center px-6">
+    <section id="home" className="relative w-full min-h-screen flex items-center justify-center px-6">
       {/* VIDEO POZADINA */}
       <div className="absolute inset-0 pointer-events-none">
         <video
@@ -86,9 +86,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="mt-8 inline-block px-6 py-3 text-lg font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+            className="mt-6 inline-block text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 animate-bounce"
           >
-            Saznaj više
+            ↓ Saznaj više
           </motion.a>
         </div>
 
@@ -115,7 +115,7 @@ const Hero = () => {
             initial={{ y: -10 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 w-64 h-64 object-cover rounded-lg shadow-2xl border-2 border-blue-500/20 rotate-2 hover:rotate-0 transition-transform duration-300"
+            className="relative z-10 w-90 h-90 object-cover rounded-lg shadow-2xl  rotate-0 hover:rotate-2 transition-transform duration-300"
             style={{ marginTop: '-2rem' }}
           />
         </motion.div>

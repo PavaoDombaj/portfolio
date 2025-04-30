@@ -35,20 +35,28 @@ const NavbarSimple = () => {
   }, []);
 
   const handleNavigation = (section) => {
-    if (location.pathname !== '/') {
-      navigate('/');
-      // Small delay to ensure the page has navigated before scrolling
-      setTimeout(() => {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
+    const scrollToSection = () => {
+      // Pokušaj pronaći element
       const element = document.getElementById(section);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Ako element nije pronađen, pokušaj ponovno nakon kratkog vremena
+        setTimeout(() => {
+          const retryElement = document.getElementById(section);
+          if (retryElement) {
+            retryElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 200);
       }
+    };
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Duži delay za navigaciju između stranica
+      setTimeout(scrollToSection, 300);
+    } else {
+      scrollToSection();
     }
   };
 

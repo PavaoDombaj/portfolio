@@ -21,7 +21,7 @@ const Projects = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              My Projects
+              Moji projekti
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
