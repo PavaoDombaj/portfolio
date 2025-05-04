@@ -113,9 +113,9 @@ const NavbarSimple = () => {
         <div
           className={`md:hidden transition-all duration-300 ease-in-out ${
             openNav
-              ? "max-h-60 opacity-100 py-4"
+              ? "max-h-60 opacity-100 py-4 bg-[#0a0a0a]/90 backdrop-blur-lg"
               : "max-h-0 opacity-0 py-0"
-          } overflow-hidden`}
+          } overflow-hidden rounded-b-lg shadow-lg`}
         >
           <div className="flex flex-col space-y-4">
             {["Home", "Projects", "About"].map((item, index) => {

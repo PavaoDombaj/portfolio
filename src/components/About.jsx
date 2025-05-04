@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import profile from "../assets/avatar.png";
+import profile from "../assets/avatar.webp";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -76,7 +76,7 @@ const About = () => {
               whileTap={{ scale: 0.95 }}
               className="inline-block px-6 py-3 text-lg font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
             >
-              Download CV
+              Pogledaj CV
             </motion.button>
           </motion.div>
         </motion.div>

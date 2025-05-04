@@ -7,7 +7,7 @@ import {
   FaNode,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-import profile from "../assets/avatar.png";
+import profile from "../assets/avatar.webp";
 import { useEffect, useRef } from "react";
 
 const Hero = () => {
