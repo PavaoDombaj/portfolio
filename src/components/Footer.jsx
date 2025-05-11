@@ -1,8 +1,10 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="relative w-full py-16 px-6 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto">
@@ -14,11 +16,11 @@ const Footer = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              Let's Connect
+              {t('contactMe')}
             </span>
           </h2>
           <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            I'm always open to new opportunities and collaborations. Feel free to reach out!
+            {t('footerDescription')}
           </p>
 
           {/* Social Links */}
@@ -52,7 +54,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-gray-400 text-sm">
-            <p>© {new Date().getFullYear()} Pavao Dombaj. All rights reserved.</p>
+            <p>{t('copyright').replace('2023', new Date().getFullYear())}</p>
           </div>
         </motion.div>
       </div>

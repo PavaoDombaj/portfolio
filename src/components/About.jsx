@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import profile from "../assets/avatar.webp";
 import { motion } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
 
 const About = () => {
   const [showNotification, setShowNotification] = useState(false);
+  const { t } = useLanguage();
 
   const handleCVClick = (e) => {
     e.preventDefault();
@@ -29,7 +31,7 @@ const About = () => {
             exit={{ opacity: 0, y: -20 }}
             className="fixed top-24 left-1/2 transform -translate-x-1/2 z-50 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg shadow-lg max-w-md text-center"
           >
-            <p className="font-medium">CV trenutno nije dostupan. Ukoliko vas zanima, slobodno me kontaktirajte putem LinkedIn-a ili maila.</p>
+            <p className="font-medium">{t('cvNotification')}</p>
           </motion.div>
         )}
 
@@ -65,18 +67,18 @@ const About = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-                O meni
+                {t('aboutTitle')}
               </span>
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
-            Pozdrav! Ja sam Pavao Dombaj, rođen 2005. godine. Završio sam školu za tehničara za računalstvo, a trenutno studiram računarstvo na 1. godini Tehničkog fakulteta u Rijeci (RITEH). Strastven sam prema tehnologiji i razvoju softvera te kontinuirano radim na usavršavanju svojih programerskih vještina.</p>
+            {t('aboutDescription')}</p>
             <motion.button
               onClick={handleCVClick}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block px-6 py-3 text-lg font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
             >
-              Pogledaj CV
+              {t('viewCV')}
             </motion.button>
           </motion.div>
         </motion.div>

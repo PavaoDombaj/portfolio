@@ -9,9 +9,11 @@ import {
 import { motion } from "framer-motion";
 import profile from "../assets/avatar.webp";
 import { useEffect, useRef } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Hero = () => {
   const videoRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (videoRef.current) {
@@ -43,7 +45,7 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="text-5xl md:text-6xl font-bold text-white leading-tight"
           >
-            Ja sam <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">Pavao Dombaj.</span>
+            {t('greeting')} <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">Pavao Dombaj.</span>
           </motion.h1>
 
           <motion.p
@@ -52,9 +54,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.3 }}
             className="mt-4 text-xl text-gray-300 leading-relaxed"
           >
-            Student računarstva & web developer. Gradim moderne aplikacije s{" "}
-            <span className="font-bold text-blue-400">Reactom</span> i{" "}
-            <span className="font-bold text-blue-400">TailwindCSS-om</span>.
+            {t('role')}. {t('description')}
           </motion.p>
 
           <motion.div
@@ -88,7 +88,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.8 }}
             className="mt-6 inline-block text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 animate-bounce"
           >
-            ↓ Saznaj više
+            ↓ {t('contactButton')}
           </motion.a>
         </div>
 
@@ -115,7 +115,7 @@ const Hero = () => {
             initial={{ y: -10 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 w-90 h-90 object-cover rounded-lg shadow-2xl  rotate-0 hover:rotate-2 transition-transform duration-300"
+            className="relative z-10 w-90 h-90 object-cover rounded-lg   rotate-0 hover:rotate-2 transition-transform duration-300"
             style={{ marginTop: '-2rem' }}
           />
         </motion.div>

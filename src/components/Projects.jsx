@@ -2,8 +2,10 @@ import React from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
 import projectData from "./ProjectData";
+import { useLanguage } from "../context/LanguageContext";
 
 const Projects = () => {
+  const { t } = useLanguage();
   return (
     <motion.section
       id="projects"
@@ -21,11 +23,11 @@ const Projects = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              Moji projekti
+              {t('projectsTitle')}
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Ovdje možete vidjeti neke od mojih projekata i tehnologija koje koristim
+            {t('projectsDescription')}
           </p>
         </motion.div>
 

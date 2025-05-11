@@ -1,8 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
 
 const ProjectCard = ({ project }) => {
+  const { t, language } = useLanguage();
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -22,11 +24,11 @@ const ProjectCard = ({ project }) => {
       <div className="p-6">
         {/* Naslov */}
         <h3 className="text-xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-          {project.name}
+          {project.translations[language].name}
         </h3>
 
         {/* Opis */}
-        <p className="text-gray-300 mb-4 line-clamp-2">{project.shortDescription}</p>
+        <p className="text-gray-300 mb-4 line-clamp-2">{project.translations[language].shortDescription}</p>
 
         {/* Tehnologije */}
         <div className="flex flex-wrap gap-3 mb-4">
@@ -57,7 +59,7 @@ const ProjectCard = ({ project }) => {
             href={`/project/${project.slug}`}
             className="flex-1 px-4 py-2 text-center rounded-lg border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-all duration-300"
           >
-            View Details
+            {t('viewProject')}
           </a>
         </div>
       </div>

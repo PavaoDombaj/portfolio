@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
 
 const NavbarSimple = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -8,6 +9,7 @@ const NavbarSimple = () => {
   const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
   const navigate = useNavigate();
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,31 +78,42 @@ const NavbarSimple = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {["Home", "Projects", "About"].map((item, index) => {
-              const path = item.toLowerCase();
-              const isActive = activeSection === path;
+            {[
+              { name: t('home'), path: 'home' },
+              { name: t('projects'), path: 'projects' },
+              { name: t('about'), path: 'about' }
+            ].map((item, index) => {
+              const isActive = activeSection === item.path;
               return (
                 <button
                   key={index}
-                  onClick={() => handleNavigation(path)}
+                  onClick={() => handleNavigation(item.path)}
                   className={`text-gray-300 hover:text-blue-400 transition-colors duration-300 relative group ${
                     isActive ? 'text-blue-400' : ''
                   }`}
                 >
-                  {item}
+                  {item.name}
                   <span className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-600 transition-all duration-300 ${
                     isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}></span>
                 </button>
               );
             })}
+            
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium"
+            >
+              {language === 'hr' ? 'EN' : 'HR'}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-300 hover:text-blue-400 transition-colors duration-300"
             onClick={() => setOpenNav(!openNav)}
-          >
+          >p
             {openNav ? (
               <XMarkIcon className="h-8 w-8" />
             ) : (
@@ -118,24 +131,38 @@ const NavbarSimple = () => {
           } overflow-hidden rounded-b-lg shadow-lg`}
         >
           <div className="flex flex-col space-y-4">
-            {["Home", "Projects", "About"].map((item, index) => {
-              const path = item.toLowerCase();
-              const isActive = activeSection === path;
+            {[
+              { name: t('home'), path: 'home' },
+              { name: t('projects'), path: 'projects' },
+              { name: t('about'), path: 'about' }
+            ].map((item, index) => {
+              const isActive = activeSection === item.path;
               return (
                 <button
                   key={index}
                   onClick={() => {
-                    handleNavigation(path);
+                    handleNavigation(item.path);
                     setOpenNav(false);
                   }}
                   className={`text-gray-300 hover:text-blue-400 transition-colors duration-300 ${
                     isActive ? 'text-blue-400' : ''
                   }`}
                 >
-                  {item}
+                  {item.name}
                 </button>
               );
             })}
+            
+            {/* Language Toggle - Mobile */}
+            <button
+              onClick={() => {
+                toggleLanguage();
+                setOpenNav(false);
+              }}
+              className="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium"
+            >
+              {language === 'hr' ? 'Promijeni na engleski' : 'Switch to Croatian'}
+            </button>
           </div>
         </div>
       </div>
