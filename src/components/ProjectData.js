@@ -32,7 +32,7 @@ This was my first major project and, although it presented a huge challenge for 
     technologies: [
       { icon: faReact, iconName: "React" },
       { icon: faNodeJs, iconName: "Node.js" },
-      { icon: faHtml5, iconName: "HTML5" },
+      { icon: faHtml5, iconName: "HTML5" }, 
       { icon: faCss3Alt, iconName: "CSS3" },
       { icon: faDatabase, iconName: "MongoDB" },
     ],
@@ -41,7 +41,7 @@ This was my first major project and, although it presented a huge challenge for 
     id: "portfolio",
     slug: "portfolio",
     images: ["/images/portfolio/1.png",
-      "/images/portfolio/2.png",
+      "/images/portfolio/2.png","/images/portfolio/3.png","/images/portfolio/4.png",
     ],
     translations: {
       hr: {
