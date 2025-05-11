@@ -109,11 +109,19 @@ const NavbarSimple = () => {
             </button>
           </div>
 
+          {/* Language Toggle for Mobile - Always visible */}
+          <button
+            onClick={toggleLanguage}
+            className="md:hidden text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium mr-4"
+          >
+            {language === 'hr' ? 'EN' : 'HR'}
+          </button>
+          
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-300 hover:text-blue-400 transition-colors duration-300"
             onClick={() => setOpenNav(!openNav)}
-          >p
+          >
             {openNav ? (
               <XMarkIcon className="h-8 w-8" />
             ) : (
@@ -152,17 +160,6 @@ const NavbarSimple = () => {
                 </button>
               );
             })}
-            
-            {/* Language Toggle - Mobile */}
-            <button
-              onClick={() => {
-                toggleLanguage();
-                setOpenNav(false);
-              }}
-              className="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium"
-            >
-              {language === 'hr' ? 'Promijeni na engleski' : 'Switch to Croatian'}
-            </button>
           </div>
         </div>
       </div>

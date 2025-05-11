@@ -52,7 +52,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="mt-4 text-xl text-gray-300 leading-relaxed"
+            className="mt-4 text-xl  text-gray-300 leading-relaxed"
           >
             {t('role')}. {t('description')}
           </motion.p>

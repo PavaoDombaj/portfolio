@@ -20,7 +20,15 @@ const ProjectView = () => {
    const { t, language } = useLanguage();
 
   const handleNavigation = (section) => {
-    navigate(`/#${section}`);
+    navigate('/');
+    
+    // Add a small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   if (!project) {
