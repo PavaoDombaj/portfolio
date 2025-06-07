@@ -10,7 +10,7 @@ function App() {
       {/* Navbar */}
       <NavbarSimple />
 
-      <div className="w-full max-w-7xl px-6">
+      <div className="w-full px-6">
         <Hero />
         <Projects />
         <About />
