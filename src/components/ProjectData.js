@@ -3,6 +3,7 @@ import {
   faNodeJs,
   faHtml5,
   faCss3Alt,
+  faFigma,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
@@ -71,6 +72,44 @@ This is not just a static page – it's my development journey, which I will con
       { icon: faReact, iconName: "React" },
       { icon: faHtml5, iconName: "HTML5" },
       { icon: faCss3Alt, iconName: "CSS3" },
+    ],
+  },
+  {
+    id: "opgsite",
+    slug: "opgsite",
+    images: ["/images/opgsite/1.png",
+      "/images/opgsite/2.png","/images/opgsite/3.png","/images/opgsite/4.png","/images/opgsite/5.png","/images/opgsite/6.png",
+    ],
+    translations: {
+      hr: {
+        name: "OPG site",
+        shortDescription: "Site za OPG s mogućnošću pisanja bloga (novosti)",
+        description: `Ova web stranica izrađena je kao centralno mjesto za predstavljanje OPG-a i komunikaciju s posjetiteljima. 
+    Prije same implementacije, dizajnirao sam izgled stranice u Figmi kako bih definirao strukturu i vizualni identitet, a zatim sam taj dizajn prenio u kod koristeći React i Tailwind CSS.
+    Osim osnovnih informacija o radu i ponudi, integrirao sam i blog sekciju putem Sanity CMS-a, gdje se mogu objavljivati novosti, članci i obavijesti. 
+    Cilj je bio napraviti preglednu, modernu i responzivnu web stranicu koja istovremeno služi i kao praktičan alat za dijeljenje sadržaja.
+    Korištenjem Sanityja omogućeno je jednostavno upravljanje objavama i sadržajem, dok vizualni pristup ostaje minimalistički, funkcionalan i prilagođen potrebama OPG-a.
+    Ovaj projekt spoj je dizajna i razvoja – od početne skice u Figmi do potpuno funkcionalne web stranice.`
+      },
+      en: {
+        name: "OPG site",
+        shortDescription: "Website for a family farm with blog functionality",
+        description: `This website was created as a central place to represent a family farm (OPG) and communicate with visitors. 
+    Before starting development, I designed the layout in Figma to define the structure and visual identity, and then translated that design into code using React and Tailwind CSS. 
+    In addition to providing basic information about the farm’s work and offerings, I integrated a blog section powered by Sanity CMS, where news, updates, and articles can be published. 
+    The goal was to build a clean, modern, and responsive website that also serves as a practical tool for sharing content.
+    Sanity ensures smooth and flexible content management, while the overall design remains minimalist, functional, and tailored to the needs of the family farm. 
+    This project represents a complete workflow from initial design in Figma to a fully functional website built with modern web technologies.`
+      }
+    },
+    redirectUrl: "https://opg.hr/",
+    github: "https://github.com/PavaoDombaj/opg-site",
+    technologies: [
+      { icon: faFigma, iconName: "Figma" },
+      { icon: faReact, iconName: "React" },
+      { icon: faHtml5, iconName: "HTML5" },
+      { icon: faCss3Alt, iconName: "CSS3" },
+      
     ],
   },
 ];
