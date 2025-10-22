@@ -126,7 +126,7 @@ This is not just a static page – it's my development journey, which I will con
       { icon: faHtml5, iconName: "HTML5" },
       { icon: faCss3Alt, iconName: "CSS3" },
     ],
-  },
+  },/*
   {
     id: "genapply",
     slug: "ai-resume-builder",
@@ -159,7 +159,7 @@ This is not just a static page – it's my development journey, which I will con
       { icon: faReact, iconName: "React" },
       { icon: faPlus, iconName: "Gemini AI API" },
     ],
-  },
+  }*/
 ];
 
 export default projectData;
