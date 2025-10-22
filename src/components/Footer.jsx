@@ -6,7 +6,7 @@ import { useLanguage } from "../context/LanguageContext";
 const Footer = () => {
   const { t } = useLanguage();
   return (
-    <footer className="relative w-full py-16 px-6 backdrop-blur-sm">
+    <footer className="relative w-full py-16 px-6 backdrop-blur-sm" id="contact">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

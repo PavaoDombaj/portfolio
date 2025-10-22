@@ -16,6 +16,7 @@ const translations = {
     contactButton: "Kontaktiraj me",
 
     // Projects
+    viewProjectsButton:"Pogledaj radove",
     projectsTitle: "Projekti",
     projectsDescription: "Pogledajte neke od mojih projekata",
     viewProject: "Pogledaj projekt",
@@ -54,6 +55,7 @@ const translations = {
     contactButton: "Contact me",
 
     // Projects
+    viewProjectsButton:"View Projects",
     projectsTitle: "Projects",
     projectsDescription: "Check out some of my projects",
     viewProject: "View project",

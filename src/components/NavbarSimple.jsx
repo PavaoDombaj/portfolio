@@ -103,10 +103,11 @@ const NavbarSimple = () => {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium"
+              className="text-gray-400 hover:text-white transition-colors duration-300 font-medium ml-4 border border-gray-700/50 hover:border-blue-400 px-3 py-1 rounded-full text-sm"
             >
               {language === 'hr' ? 'EN' : 'HR'}
             </button>
+          
           </div>
 
           {/* Language Toggle for Mobile - Always visible */}
