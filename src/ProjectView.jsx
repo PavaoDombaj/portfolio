@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Slider from "react-slick";
@@ -19,6 +19,23 @@ const ProjectView = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
    const { t, language } = useLanguage();
 
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   const handleNavigation = (section) => {
     navigate('/');
     
@@ -33,11 +50,29 @@ const ProjectView = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0D1117]">
+        {/* Subtle background effects */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute w-[400px] h-[400px] rounded-full pointer-events-none transition-transform duration-300 ease-out z-0"
+            style={{
+              left: mousePosition.x,
+              top: mousePosition.y,
+              background: 'radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, rgba(10, 10, 10, 0) 70%)',
+              transform: 'translate(-50%, -50%)',
+            }}
+          />
+
+          <div className="absolute top-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-[150px]"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-teal-500/10 rounded-full blur-[150px]"></div>
+
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:30px_30px] opacity-5"></div>
+        </div>
+
         <NavbarSimple />
         
         <motion.div 
-          className="min-h-[90vh] flex flex-col items-center justify-center px-4"
+          className="min-h-[90vh] flex flex-col items-center justify-center px-4 relative z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -58,7 +93,7 @@ const ProjectView = () => {
             </motion.div>
             
             <motion.h2 
-              className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 mb-4"
+              className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent primary-gradient mb-4"
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -83,7 +118,7 @@ const ProjectView = () => {
             >
               <button 
                 onClick={() => handleNavigation('projects')}
-                className="px-6 py-3 text-lg font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/30"
+                className="px-6 py-3 text-lg font-medium text-white bg-primary-gradient rounded-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/30"
               >
                 {t('backToProjects')}
               </button>
@@ -133,14 +168,32 @@ const ProjectView = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="min-h-screen bg-[#0D1117]">
+      {/* Subtle background effects */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute w-[400px] h-[400px] rounded-full pointer-events-none transition-transform duration-300 ease-out z-0"
+          style={{
+            left: mousePosition.x,
+            top: mousePosition.y,
+            background: 'radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, rgba(10, 10, 10, 0) 70%)',
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
+
+        <div className="absolute top-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-[150px]"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-teal-500/10 rounded-full blur-[150px]"></div>
+
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:30px_30px] opacity-5"></div>
+      </div>
+
       <NavbarSimple />
 
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="relative max-w-7xl mx-auto px-6 py-20"
+        className="relative max-w-7xl mx-auto px-6 py-20 z-10"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Lijeva strana - Slike */}
@@ -148,7 +201,7 @@ const ProjectView = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="bg-[#0a0a0a]/50 backdrop-blur-sm rounded-xl p-6 border border-blue-500/10"
+            className="bg-[#0D1117]/50 backdrop-blur-sm rounded-xl p-6 border border-blue-500/10"
           >
             <Slider {...settings} className="rounded-lg overflow-hidden">
               {project.images.map((image, index) => (
@@ -168,10 +221,10 @@ const ProjectView = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="bg-[#0a0a0a]/50 backdrop-blur-sm rounded-xl p-8 border border-blue-500/10"
+            className="bg-[#0D1117]/50 backdrop-blur-sm rounded-xl p-8 border border-blue-500/10"
           >
             <h1 className="text-4xl font-bold mb-6">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+              <span className="bg-clip-text text-transparent primary-gradient">
                 {project.translations[language].name}
               </span>
             </h1>
@@ -205,7 +258,7 @@ const ProjectView = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-6 py-3 text-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+                  className="flex-1 px-6 py-3 text-center rounded-lg bg-primary-gradient text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
                 >
                   {t('viewOnGitHub')}
                 </a>

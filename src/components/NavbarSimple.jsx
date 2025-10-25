@@ -71,7 +71,7 @@ const NavbarSimple = () => {
           {/* Logo */}
           <button 
             onClick={() => handleNavigation('home')}
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 hover:from-blue-500 hover:to-purple-700 transition-all duration-300"
+            className="text-2xl font-bold bg-clip-text text-transparent primary-gradient hover:primary-gradient-hover transition-all duration-300"
           >
             Pavao Dombaj
           </button>
@@ -93,7 +93,7 @@ const NavbarSimple = () => {
                   }`}
                 >
                   {item.name}
-                  <span className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-600 transition-all duration-300 ${
+                  <span className={`absolute left-0 bottom-0 h-0.5 bg-primary-gradient transition-all duration-300 ${
                     isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}></span>
                 </button>

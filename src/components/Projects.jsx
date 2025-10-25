@@ -22,7 +22,7 @@ const Projects = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+            <span className="bg-clip-text text-transparent primary-gradient">
               {t('projectsTitle')}
             </span>
           </h2>

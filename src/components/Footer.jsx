@@ -15,7 +15,7 @@ const Footer = () => {
           className="text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+            <span className="bg-clip-text text-transparent primary-gradient">
               {t('contactMe')}
             </span>
           </h2>

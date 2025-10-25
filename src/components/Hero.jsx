@@ -61,7 +61,7 @@ const Hero = () => {
 
         {/* Dodatni suptilni glow za dubinu */}
         <div className="absolute top-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-[150px]"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500/10 rounded-full blur-[150px]"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-teal-500/10 rounded-full blur-[150px]"></div>
 
         {/* Vrlo suptilna grid tekstura (opcionalno) */}
          <div className="absolute inset-0 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:30px_30px] opacity-5"></div>
@@ -84,7 +84,7 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="space-y-6">
             <h1 className="text-5xl sm:text-7xl font-extrabold text-white leading-tight">
               {t('greeting')}{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 hover:from-purple-500 hover:to-blue-400 transition-all duration-500">
+              <span className="bg-clip-text text-transparent primary-gradient hover:primary-gradient-reverse transition-all duration-500">
                 Pavao Dombaj
               </span>
             </h1>

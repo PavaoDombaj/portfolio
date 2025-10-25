@@ -9,6 +9,38 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  --primary-blue: #60a5fa;
+  --primary-teal: #14b8a6;
+  --primary-blue-dark: #3b82f6;
+  --primary-teal-dark: #0d9488;
+}
+
+/* Text gradients - for use with bg-clip-text */
+.primary-gradient {
+  background: linear-gradient(to right, var(--primary-blue), var(--primary-teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.primary-gradient-hover:hover {
+  background: linear-gradient(to right, var(--primary-blue-dark), var(--primary-teal-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.primary-gradient-reverse:hover {
+  background: linear-gradient(to right, var(--primary-teal), var(--primary-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Background gradients - for buttons and backgrounds */
+.bg-primary-gradient {
+  background: linear-gradient(to right, var(--primary-blue), var(--primary-teal));
+}
+
+.bg-primary-gradient:hover {
+  background: linear-gradient(to right, var(--primary-blue-dark), var(--primary-teal-dark));
 }
 
 body {
