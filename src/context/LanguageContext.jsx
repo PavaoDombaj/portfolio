@@ -10,7 +10,7 @@ const translations = {
 
     // Hero
     greeting: "Pozdrav, ja sam",
-    role: "Web Developer & Student",
+    role: "Web Developer",
     description:
       "Gradim moderne web aplikacije koristeći najnovije tehnologije, dok kontinuirano proširujem svoje znanje.",
     contactButton: "Kontaktiraj me",
@@ -30,7 +30,7 @@ const translations = {
     // About
     aboutTitle: "O meni",
     aboutDescription:
-      "Pozdrav! Ja sam Pavao Dombaj, rođen 2005. godine. Završio sam školu za tehničara za računalstvo, a trenutno studiram računarstvo na 1. godini Tehničkog fakulteta u Rijeci (RITEH). Strastven sam prema tehnologiji i razvoju softvera te kontinuirano radim na usavršavanju svojih programerskih vještina.",
+      "Pozdrav! Ja sam Pavao Dombaj, rođen 2005. godine. Završio sam školu za tehničara za računalstvo te se bavim razvojem modernih web aplikacija. Posebno me zanimaju frontend tehnologije i izrada funkcionalnih, brzih i pristupačnih sučelja. Trenutno radim na osobnim i freelance projektima te stalno unapređujem svoje vještine.",
     viewCV: "Pogledaj CV",
     cvNotification:
       "CV trenutno nije dostupan. Ukoliko vas zanima, slobodno me kontaktirajte putem LinkedIn-a ili maila.",
@@ -49,7 +49,7 @@ const translations = {
 
     // Hero
     greeting: "Hello, I'm",
-    role: "Web Developer & Tech Student",
+    role: "Web Developer",
     description:
       "Turning ideas into functional apps while mastering the latest web technologies.",
     contactButton: "Contact me",
@@ -69,7 +69,7 @@ const translations = {
     // About
     aboutTitle: "About me",
     aboutDescription:
-      "Hello! I'm Pavao Dombaj, born in 2005. I graduated as a computer technician, and I'm currently studying computer science in my first year at the Faculty of Engineering in Rijeka (RITEH). I'm passionate about technology and software development, and I continuously work on improving my programming skills.",
+      "Hello! I'm Pavao Dombaj, born in 2005. I graduated as a computer technician and I build modern web applications. I'm especially focused on frontend technologies and creating fast, accessible, and user-friendly interfaces. I currently work on personal and freelance projects while continuously improving my skills.",
     viewCV: "View CV",
     cvNotification:
       "CV is currently not available. If you're interested, feel free to contact me via LinkedIn or email.",
