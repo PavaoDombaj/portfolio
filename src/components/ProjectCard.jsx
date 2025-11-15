@@ -42,7 +42,11 @@ const ProjectCard = ({ project }) => {
               key={index}
               className="flex items-center gap-1 px-3 py-1 rounded-full bg-white/5 text-gray-300 hover:text-blue-400 text-xs transition-colors duration-200"
             >
-              <FontAwesomeIcon icon={tech.icon} className="text-sm" />
+              {typeof tech.icon === 'function' ? (
+                <tech.icon className="text-sm" />
+              ) : (
+                <FontAwesomeIcon icon={tech.icon} className="text-sm" />
+              )}
               <span className="font-medium">{tech.iconName}</span>
             </div>
           ))}

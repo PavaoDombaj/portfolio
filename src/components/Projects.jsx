@@ -6,6 +6,7 @@ import { useLanguage } from "../context/LanguageContext";
 
 const Projects = () => {
   const { t } = useLanguage();
+  const sortedProjects = [...projectData].sort((a, b) => a.order - b.order);
   return (
     <motion.section
       id="projects"
@@ -45,7 +46,7 @@ const Projects = () => {
             },
           }}
         >
-          {projectData.map((project, index) => (
+          {sortedProjects.map((project, index) => (
             <motion.div
               key={index}
               variants={{

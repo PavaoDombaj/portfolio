@@ -8,10 +8,13 @@ import {
 
 import { faDatabase, faPlus } from "@fortawesome/free-solid-svg-icons";
 
+import { SiNextdotjs, SiSupabase, SiTailwindcss } from "react-icons/si";
+
 const projectData = [
   {
     id: "bookly",
     slug: "bookly",
+    order: 2,
     images: [
       "/images/bookly/1.png",
       "/images/bookly/2.jpg",
@@ -49,6 +52,7 @@ This was my first major project and, although it presented a huge challenge for 
   {
     id: "portfolio",
     slug: "portfolio",
+    order: 4,
     images: [
       "/images/portfolio/1.png",
       "/images/portfolio/2.png",
@@ -58,7 +62,7 @@ This was my first major project and, although it presented a huge challenge for 
     translations: {
       hr: {
         name: "Ovaj Portfolio",
-        shortDescription: "Tu se trenutno nalaziš :)",
+        shortDescription: "Tu se trenutno nalaziš ",
         description: `Ovaj portfolio sam izradio kako bih predstavio svoj rad, vještine i projekte koje razvijam. 
 Glavni cilj bio mi je stvoriti osobni prostor gdje mogu eksperimentirati s modernim tehnologijama poput Reacta i Tailwind CSS-a, dok istovremeno gradim online prisutnost.
 Portfolio služi ne samo kao prikaz mojih dosadašnjih projekata, već i kao testno okruženje za nove ideje i funkcionalnosti. 
@@ -68,7 +72,7 @@ Ovo nije samo statična stranica – to je moj razvojni put, koji ću konstantno
       },
       en: {
         name: "This Portfolio",
-        shortDescription: "You are currently here :)",
+        shortDescription: "You are currently here ",
         description: `I created this portfolio to showcase my work, skills, and projects that I'm developing.
 My main goal was to create a personal space where I can experiment with modern technologies like React and Tailwind CSS, while building an online presence.
 The portfolio serves not only as a display of my projects so far, but also as a testing environment for new ideas and functionalities.
@@ -88,6 +92,7 @@ This is not just a static page – it's my development journey, which I will con
   {
     id: "opgsite",
     slug: "opgsite",
+    order: 3,
     images: [
       "/images/opgsite/1.png",
       "/images/opgsite/2.png",
@@ -126,40 +131,35 @@ This is not just a static page – it's my development journey, which I will con
       { icon: faHtml5, iconName: "HTML5" },
       { icon: faCss3Alt, iconName: "CSS3" },
     ],
-  },/*
-  {
-    id: "genapply",
-    slug: "ai-resume-builder",
-    images: ["https://www.onlinegearboxparts.com/wp-content/uploads/indev.gif"],
-    translations: {
-      hr: {
-        name: "GenApply AI Resume Builder",
-        shortDescription:
-          "Platforma za kreiranje profesionalnih životopisa uz pomoć umjetne inteligencije (Gemini API).",
-        description: `GenApply je moderni AI alat za izradu životopisa razvijen s ciljem da pojednostavi i ubrza proces prijave za posao. Korištenjem React-a za dinamično korisničko sučelje i Tailwind CSS-a za responzivan i moderan dizajn, platforma pruža fluidno iskustvo.
-    
-    Ključna funkcionalnost je integracija s Google Gemini AI API-jem, koji automatski generira profesionalne sažetke i opise posla na temelju unesenih podataka i odabranog zanimanja, osiguravajući da je sadržaj optimiziran za sustave praćenja kandidata (ATS).
-    
-    Korisnicima je omogućeno da biraju između više predložaka dizajna i prilagođavaju boju teme (themeColor), dok se podaci automatski spremaju u Strapi. Za sigurnu autentifikaciju koristi se Clerk. Projekt spaja snagu AI-ja s čistim i funkcionalnim web razvojem.`,
-      },
-      en: {
-        name: "GenApply AI Resume Builder",
-        shortDescription:
-          "AI-powered platform for generating professional resumes using the Gemini API.",
-        description: `GenApply is a modern AI resume builder tool developed to simplify and accelerate the job application process. Built using React for a dynamic user interface and Tailwind CSS for a responsive and modern design, the platform offers a fluid user experience.
-    
-    The core feature is the integration with the Google Gemini AI API, which automatically generates professional summaries and job descriptions based on user input and selected job title, ensuring the content is optimized for Applicant Tracking Systems (ATS).
-    
-    Users can choose from multiple design templates and customize the theme color. Data is securely stored using Strapi, and Clerk is utilized for robust user authentication. This project merges the power of AI with clean and functional web development.`,
-      },
+  },{
+  id: "cinemark",
+  slug: "cine-mark",
+  order: 1,
+  images: ["/images/cinemark/1.png",
+      "/images/cinemark/2.png",
+      "/images/cinemark/3.png",
+      "/images/cinemark/4.png"],
+  translations: {
+    hr: {
+      name: "CineMark",
+      shortDescription: "Moderna web aplikacija za ljubitelje filmova s pretragom, wishlistom i ocjenjivanjem.",
+      description: "CineMark je moderna web aplikacija namijenjena ljubiteljima filmova, izgrađena koristeći Next.js 14. Omogućava real-time pretragu filmova bez potrebe za pritiskom na Enter, upravljanje osobnom wishlistom za filmove koje želite pogledati kasnije, te ocjenjivanje i komentiranje već pogledanih filmova.\n\nKljučna funkcionalnost uključuje integraciju s TMDB API-jem za pristup bogatoj bazi filmskih podataka, dok Supabase osigurava sigurnu autentifikaciju korisnika i pohranu podataka u bazi. Aplikacija koristi Row Level Security (RLS) politike za zaštitu privatnosti korisničkih podataka.\n\nKorisnici mogu uživati u modernom tamnom dizajnu realiziranom s Tailwind CSS-om, fluidnim animacijama zahvaljujući Framer Motion-u, te responzivnom sučelju koje radi na desktopu i mobilnim uređajima. Projekt kombinira snagu suvremenih web tehnologija s intuitivnim korisničkim iskustvom."
     },
-    redirectUrl: "",
-    github: "https://github.com/PavaoDombaj/AiResumeBuilder",
-    technologies: [
-      { icon: faReact, iconName: "React" },
-      { icon: faPlus, iconName: "Gemini AI API" },
-    ],
-  }*/
+    en: {
+      name: "CineMark",
+      shortDescription: "A modern web app for movie lovers featuring search, wishlist, and movie rating.",
+      description: "CineMark is a modern web application designed for movie enthusiasts, built using Next.js 14. It enables real-time movie search without needing to press Enter, managing a personal wishlist for movies you want to watch later, and rating and commenting on movies you've already seen.\n\nCore functionality includes integration with the TMDB API for access to a rich movie database, while Supabase ensures secure user authentication and data storage. The app utilizes Row Level Security (RLS) policies to protect user data privacy.\n\nUsers can enjoy a modern dark design implemented with Tailwind CSS, smooth animations thanks to Framer Motion, and a responsive interface that works on desktops and mobile devices. The project combines the power of modern web technologies with an intuitive user experience."
+    }
+  },
+  redirectUrl: "https://cine-mark.vercel.app/",
+  github: "https://github.com/PavaoDombaj/CineMark",
+  technologies: [
+    { icon: SiNextdotjs, iconName: "Next.js" },
+    { icon: SiSupabase, iconName: "Supabase" },
+    { icon: SiTailwindcss, iconName: "Tailwind CSS" },
+  ],
+},
 ];
+
 
 export default projectData;
