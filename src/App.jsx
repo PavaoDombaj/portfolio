@@ -1,6 +1,7 @@
 import NavbarSimple from "./components/NavbarSimple";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
+import CallToAction from "./components/CallToAction";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
@@ -13,6 +14,7 @@ function App() {
       <div className="w-full px-6">
         <Hero />
         <Projects />
+        <CallToAction />
         <About />
         <Footer />
       </div>

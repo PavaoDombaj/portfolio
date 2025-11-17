@@ -193,7 +193,7 @@ const ProjectView = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="relative max-w-7xl mx-auto px-6 py-20 z-10"
+        className="relative max-w-7xl mx-auto px-6 py-32 z-10"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Lijeva strana - Slike */}
@@ -201,15 +201,15 @@ const ProjectView = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="bg-[#0D1117]/50 backdrop-blur-sm rounded-xl p-6 border border-blue-500/10"
+            className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] backdrop-blur-sm rounded-2xl p-6 border border-white/10 shadow-2xl"
           >
-            <Slider {...settings} className="rounded-lg overflow-hidden">
+            <Slider {...settings} className="rounded-xl overflow-hidden">
               {project.images.map((image, index) => (
                 <div key={index} className="relative h-96 cursor-pointer" onClick={() => openImage(index)}>
                   <img
                     src={image}
                     alt={`${project.translations[language].name} - ${index + 1}`}
-                    className="w-full h-full object-cover rounded-lg hover:opacity-90 transition-opacity duration-300"
+                    className="w-full h-full object-cover rounded-xl hover:opacity-90 transition-opacity duration-300"
                   />
                 </div>
               ))}
@@ -221,56 +221,68 @@ const ProjectView = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="bg-[#0D1117]/50 backdrop-blur-sm rounded-xl p-8 border border-blue-500/10"
+            className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl space-y-6"
           >
-            <h1 className="text-4xl font-bold mb-6">
+            <h1 className="text-5xl font-bold">
               <span className="bg-clip-text text-transparent primary-gradient">
                 {project.translations[language].name}
               </span>
             </h1>
 
-            <div className="prose prose-invert max-w-none mb-8">
-              <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
+            <div className="prose prose-invert max-w-none">
+              <p className="text-gray-400 text-lg leading-relaxed whitespace-pre-line">
                 {project.translations[language].description}
               </p>
             </div>
 
             {/* Tehnologije */}
-            <div className="mb-8">
+            <div>
               <h3 className="text-xl font-semibold text-gray-300 mb-4">{t('technologiesUsed')}</h3>
               <div className="flex flex-wrap gap-3">
                 {project.technologies.map((tech, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 text-gray-300 hover:text-blue-400 hover:border-blue-400/50 transition-all duration-300"
                   >
-                    <FontAwesomeIcon icon={tech.icon} className="text-sm" />
-                    <span className="text-sm">{tech.iconName}</span>
+                    {typeof tech.icon === 'function' ? (
+                      <tech.icon className="text-base" />
+                    ) : (
+                      <FontAwesomeIcon icon={tech.icon} className="text-base" />
+                    )}
+                    <span className="text-sm font-medium">{tech.iconName}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Linkovi */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 pt-4">
               {project.github && (
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-6 py-3 text-center rounded-lg bg-primary-gradient text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+                  className="flex-1 px-6 py-3 text-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
                 >
                   {t('viewOnGitHub')}
                 </a>
               )}
               {project.redirectUrl && (
-                <button
-                  onClick={() => handleNavigation('projects')}
-                  className="flex-1 px-6 py-3 text-center rounded-lg border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-all duration-300"
+                <a
+                  href={project.redirectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 px-6 py-3 text-center rounded-xl border border-gray-700 bg-white/5 backdrop-blur-sm text-gray-300 hover:border-blue-500 hover:text-blue-400 hover:bg-blue-500/10 transition-all duration-300"
                 >
-                  {t('backToProjects')}
-                </button>
+                  {t('viewLive') || 'View Live'}
+                </a>
               )}
+              <button
+                onClick={() => handleNavigation('projects')}
+                className="px-6 py-3 text-center rounded-xl border border-gray-700 bg-white/5 backdrop-blur-sm text-gray-300 hover:border-blue-500 hover:text-blue-400 hover:bg-blue-500/10 transition-all duration-300"
+              >
+                {t('backToProjects')}
+              </button>
             </div>
           </motion.div>
         </div>

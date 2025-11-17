@@ -81,7 +81,7 @@ Through it, I want to show my progress, but also open doors for future collabora
 This is not just a static page – it's my development journey, which I will constantly upgrade and improve! 🚀`,
       },
     },
-    redirectUrl: "/",
+    redirectUrl: "",
     github: "https://github.com/PavaoDombaj/portfolio",
     technologies: [
       { icon: faReact, iconName: "React" },
@@ -123,7 +123,7 @@ This is not just a static page – it's my development journey, which I will con
     This project represents a complete workflow from initial design in Figma to a fully functional website built with modern web technologies.`,
       },
     },
-    redirectUrl: "https://opg.hr/",
+    redirectUrl: "",
     github: "https://github.com/PavaoDombaj/opg-site",
     technologies: [
       { icon: faFigma, iconName: "Figma" },
