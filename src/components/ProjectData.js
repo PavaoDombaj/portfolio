@@ -6,15 +6,56 @@ import {
   faFigma,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faDatabase, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
-import { SiNextdotjs, SiSupabase, SiTailwindcss } from "react-icons/si";
+import { SiNextdotjs, SiSupabase, SiTailwindcss, SiReact, SiStrapi, SiPostgresql, SiDocker, SiNginx, SiVite} from "react-icons/si";
 
 const projectData = [
   {
+  id: "genapply",
+  slug: "genapply-ai-resume-builder",
+  order: 1,
+  images: [
+    "/images/genapply/1.png",
+    "/images/genapply/2.png",
+    "/images/genapply/3.png",
+    "/images/genapply/4.png",
+    "/images/genapply/5.png",
+    "/images/genapply/6.png"  
+
+  ],
+  translations: {
+    hr: {
+      name: "GenApply – AI Resume Builder",
+      shortDescription:
+        "AI alat za izradu životopisa i prijava, s automatskim parsiranjem CV-a, generiranjem sadržaja i modernim editorom u stvarnom vremenu.",
+      description:
+        "GenApply je full‑stack web aplikacija za brzu izradu profesionalnih životopisa i prijava. Frontend je izgrađen u Reactu (Vite), dok backend koristi Strapi kao headless CMS i API sloj. Aplikacija omogućava korisnicima registraciju, prijavu i upravljanje više verzija životopisa kroz moderan dashboard.\n\nKljučna funkcionalnost je AI integracija preko Google Gemini modela: korisnik može uploadati svoj postojeći CV (PDF/DOCX), backend parsira sadržaj i strukturira ga u polja prilagođena editoru. Unutar editora moguće je generirati i poboljšati tekst uz pomoć AI‑a, dok se promjene prikazuju u real‑time previewu. Svi podaci se pohranjuju u PostgreSQL bazu putem Strapi API‑ja.\n\nProjekt je deployan na vlastiti VPS koristeći Docker Compose (odvojeni servisi za Strapi, PostgreSQL i frontend) te Nginx kao reverse proxy s HTTPS podrškom putem Let’s Encrypt certifikata. Posebna pažnja posvećena je SEO‑u (meta tagovi, Open Graph, strukturirana početna stranica) i osnovnoj analitici kroz Google Analytics 4. GenApply kombinira moderne web tehnologije, rad s infrastrukturom (VPS, Docker, Nginx) i praktičnu primjenu AI‑a u rješavanju stvarnog problema.",
+    },
+    en: {
+      name: "GenApply – AI Resume Builder",
+      shortDescription:
+        "An AI‑powered resume builder with CV parsing, content generation, and a modern real‑time editor.",
+      description:
+        "GenApply is a full‑stack web application for creating professional resumes and job applications quickly. The frontend is built with React (Vite), while the backend uses Strapi as a headless CMS and API layer. Users can register, log in, and manage multiple resume versions through a modern dashboard experience.\n\nThe core feature is AI integration via the Google Gemini model: users can upload their existing CV (PDF/DOCX), the backend parses the content and maps it into structured fields tailored for the editor. Inside the editor, users can generate and improve text using AI, while changes are reflected in a real‑time preview. All data is stored in a PostgreSQL database via the Strapi API.\n\nThe project is deployed on a self‑hosted VPS using Docker Compose (separate services for Strapi, PostgreSQL, and the frontend) and Nginx as a reverse proxy with HTTPS provided by Let’s Encrypt certificates. Extra attention was given to SEO (meta tags, Open Graph, structured landing page content) and basic analytics through Google Analytics 4. GenApply combines modern web technologies, infrastructure work (VPS, Docker, Nginx), and practical AI integration to solve a real‑world problem.",
+    }
+  },
+  redirectUrl: "https://genapply.xyz/",
+  github: "",
+  technologies: [
+    { icon: SiReact, iconName: "React" },
+    { icon: SiVite, iconName: "Vite" },
+    { icon: SiStrapi, iconName: "Strapi" },
+    { icon: SiPostgresql, iconName: "PostgreSQL" },
+    { icon: SiDocker, iconName: "Docker" },
+    { icon: SiNginx, iconName: "Nginx" },
+    { icon: SiTailwindcss, iconName: "Tailwind CSS" }
+  ]
+},
+  {
     id: "bookly",
     slug: "bookly",
-    order: 2,
+    order: 4,
     images: [
       "/images/bookly/1.png",
       "/images/bookly/2.jpg",
@@ -49,46 +90,46 @@ This was my first major project and, although it presented a huge challenge for 
       { icon: faDatabase, iconName: "MongoDB" },
     ],
   },
-  {
-    id: "portfolio",
-    slug: "portfolio",
-    order: 4,
-    images: [
-      "/images/portfolio/1.png",
-      "/images/portfolio/2.png",
-      "/images/portfolio/3.png",
-      "/images/portfolio/4.png",
-    ],
-    translations: {
-      hr: {
-        name: "Ovaj Portfolio",
-        shortDescription: "Tu se trenutno nalaziš ",
-        description: `Ovaj portfolio sam izradio kako bih predstavio svoj rad, vještine i projekte koje razvijam. 
-Glavni cilj bio mi je stvoriti osobni prostor gdje mogu eksperimentirati s modernim tehnologijama poput Reacta i Tailwind CSS-a, dok istovremeno gradim online prisutnost.
-Portfolio služi ne samo kao prikaz mojih dosadašnjih projekata, već i kao testno okruženje za nove ideje i funkcionalnosti. 
-Svaki element na stranici odražava moj stil i pristup razvoju web aplikacija – minimalistički, responzivan i intuitivan.
-Kroz njega želim pokazati svoj napredak, ali i otvoriti vrata budućim suradnjama.   
-Ovo nije samo statična stranica – to je moj razvojni put, koji ću konstantno nadograđivati i poboljšavati! 🚀`,
-      },
-      en: {
-        name: "This Portfolio",
-        shortDescription: "You are currently here ",
-        description: `I created this portfolio to showcase my work, skills, and projects that I'm developing.
-My main goal was to create a personal space where I can experiment with modern technologies like React and Tailwind CSS, while building an online presence.
-The portfolio serves not only as a display of my projects so far, but also as a testing environment for new ideas and functionalities.
-Every element on the page reflects my style and approach to web application development – minimalist, responsive, and intuitive.
-Through it, I want to show my progress, but also open doors for future collaborations.
-This is not just a static page – it's my development journey, which I will constantly upgrade and improve! 🚀`,
-      },
-    },
-    redirectUrl: "",
-    github: "https://github.com/PavaoDombaj/portfolio",
-    technologies: [
-      { icon: faReact, iconName: "React" },
-      { icon: faHtml5, iconName: "HTML5" },
-      { icon: faCss3Alt, iconName: "CSS3" },
-    ],
-  },
+  // {
+  //   id: "portfolio",
+  //   slug: "portfolio",
+  //   order: 5,
+  //   images: [
+  //     "/images/portfolio/1.png",
+  //     "/images/portfolio/2.png",
+  //     "/images/portfolio/3.png",
+  //     "/images/portfolio/4.png",
+  //   ],
+  //   translations: {
+  //     hr: {
+  //       name: "Ovaj Portfolio",
+  //       shortDescription: "Tu se trenutno nalaziš ",
+  //       description: `Ovaj portfolio sam izradio kako bih predstavio svoj rad, vještine i projekte koje razvijam. 
+  // Glavni cilj bio mi je stvoriti osobni prostor gdje mogu eksperimentirati s modernim tehnologijama poput Reacta i Tailwind CSS-a, dok istovremeno gradim online prisutnost.
+  // Portfolio služi ne samo kao prikaz mojih dosadašnjih projekata, već i kao testno okruženje za nove ideje i funkcionalnosti. 
+  // Svaki element na stranici odražava moj stil i pristup razvoju web aplikacija – minimalistički, responzivan i intuitivan.
+  // Kroz njega želim pokazati svoj napredak, ali i otvoriti vrata budućim suradnjama.   
+  // Ovo nije samo statična stranica – to je moj razvojni put, koji ću konstantno nadograđivati i poboljšavati! 🚀`,
+  //     },
+  //     en: {
+  //       name: "This Portfolio",
+  //       shortDescription: "You are currently here ",
+  //       description: `I created this portfolio to showcase my work, skills, and projects that I'm developing.
+  // My main goal was to create a personal space where I can experiment with modern technologies like React and Tailwind CSS, while building an online presence.
+  // The portfolio serves not only as a display of my projects so far, but also as a testing environment for new ideas and functionalities.
+  // Every element on the page reflects my style and approach to web application development – minimalist, responsive, and intuitive.
+  // Through it, I want to show my progress, but also open doors for future collaborations.
+  // This is not just a static page – it's my development journey, which I will constantly upgrade and improve! 🚀`,
+  //     },
+  //   },
+  //   redirectUrl: "",
+  //   github: "https://github.com/PavaoDombaj/portfolio",
+  //   technologies: [
+  //     { icon: faReact, iconName: "React" },
+  //     { icon: faHtml5, iconName: "HTML5" },
+  //     { icon: faCss3Alt, iconName: "CSS3" },
+  //   ],
+  // },
   {
     id: "opgsite",
     slug: "opgsite",
@@ -134,7 +175,7 @@ This is not just a static page – it's my development journey, which I will con
   },{
   id: "cinemark",
   slug: "cine-mark",
-  order: 1,
+  order: 2,
   images: ["/images/cinemark/1.png",
       "/images/cinemark/2.png",
       "/images/cinemark/3.png",
