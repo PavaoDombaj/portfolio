@@ -15,7 +15,7 @@ const CallToAction = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-transparent to-purple-500/5"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ const CallToAction = () => {
           </motion.h2>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

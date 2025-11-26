@@ -13,19 +13,19 @@ const Footer = () => {
         <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="text-center"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-clip-text text-transparent primary-gradient">
               {t('contactMe')}
             </span>
           </h2>
-          <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-300 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
             {t('footerDescription')}
           </p>
 
@@ -62,7 +62,7 @@ const Footer = () => {
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
 
           {/* Copyright */}
-          <div className="text-gray-500 text-sm">
+          <div className="text-slate-500 text-sm">
             <p>{t('copyright').replace('2023', new Date().getFullYear())}</p>
           </div>
         </motion.div>

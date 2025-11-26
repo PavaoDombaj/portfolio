@@ -10,7 +10,7 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="relative w-full px-6 py-32"
+      className="relative w-full px-4 sm:px-6 lg:px-10 py-28"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
@@ -21,7 +21,7 @@ const Projects = () => {
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: -10 }}
@@ -33,7 +33,7 @@ const Projects = () => {
               {t('projectsTitle')}
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
             {t('projectsDescription')}
           </p>
         </motion.div>

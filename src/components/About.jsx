@@ -9,7 +9,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative w-full py-32 px-6"
+      className="relative w-full py-32 px-4 sm:px-6 lg:px-10"
     >
       {/* Background gradient effects */}
       <div className="absolute inset-0 -z-10">
@@ -17,7 +17,7 @@ const About = () => {
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
           initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ const About = () => {
               </span>
             </h2>
             
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-slate-300 text-lg leading-relaxed">
               {t('aboutDescription')}
             </p>
           </motion.div>
