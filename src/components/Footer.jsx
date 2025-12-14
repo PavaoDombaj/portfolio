@@ -6,11 +6,12 @@ import { useLanguage } from "../context/LanguageContext";
 const Footer = () => {
   const { t } = useLanguage();
   return (
-    <footer className="relative w-full py-20 px-6 backdrop-blur-sm" id="contact">
+    <footer className="relative w-full py-20 px-6 bg-[#050816] backdrop-blur-sm" id="contact">
       {/* Background gradient effects */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-0 left-1/3 w-80 h-80 bg-blue-500/18 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-purple-500/18 rounded-full blur-[120px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[length:22px_22px] opacity-20" />
       </div>
 
       <div className="max-w-6xl mx-auto">

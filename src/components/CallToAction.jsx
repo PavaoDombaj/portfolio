@@ -7,12 +7,12 @@ const CallToAction = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full py-24">
+    <section className="relative w-full py-24 bg-[#050816]">
       {/* Background effects */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-500/8 rounded-full blur-[140px] transform -translate-y-1/2"></div>
-        <div className="absolute top-1/2 right-0 w-96 h-96 bg-purple-500/8 rounded-full blur-[140px] transform -translate-y-1/2"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-transparent to-purple-500/5"></div>
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-1/2 -left-10 w-80 h-80 bg-blue-500/15 rounded-full blur-[140px] transform -translate-y-1/2"></div>
+        <div className="absolute top-1/2 -right-10 w-80 h-80 bg-purple-500/15 rounded-full blur-[140px] transform -translate-y-1/2"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[length:22px_22px] opacity-20" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 text-center">

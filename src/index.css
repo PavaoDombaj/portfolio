@@ -43,15 +43,21 @@
   background: linear-gradient(to right, var(--primary-blue-dark), var(--primary-teal-dark));
 }
 
+html {
+  background-color: #131313;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   width: 100%;
-  background-color: #0a0a0a;
+  background-color: #131313;
+  overflow-x: hidden;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
-  background-color: #0a0a0a;
+  background-color: #131313;
 }
