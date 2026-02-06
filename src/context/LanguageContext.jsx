@@ -42,8 +42,19 @@ const translations = {
     // Footer
     contactMe: "Kontaktiraj me",
     footerDescription:
-      "Slobodno me kontaktirajte putem društvenih mreža ili e-maila.",
+      "Imate pitanje ili želite surađivati? Pošaljite mi poruku!",
     copyright: "© 2025 Pavao Dombaj. Sva prava pridržana.",
+    formName: "Ime",
+    formNamePlaceholder: "Vaše ime",
+    formEmail: "Email",
+    formEmailPlaceholder: "vas@email.com",
+    formMessage: "Poruka",
+    formMessagePlaceholder: "Napišite svoju poruku...",
+    formSend: "Pošalji poruku",
+    formSending: "Šaljem...",
+    formSuccess: "Poruka je uspješno poslana!",
+    formError: "Došlo je do greške. Pokušajte ponovo.",
+    orContactVia: "ili me pronađite na",
   },
   en: {
     // Navbar
@@ -84,8 +95,19 @@ const translations = {
 
     // Footer
     contactMe: "Contact me",
-    footerDescription: "Feel free to contact me through social media or email.",
+    footerDescription: "Have a question or want to collaborate? Send me a message!",
     copyright: "© 2025 Pavao Dombaj. All rights reserved.",
+    formName: "Name",
+    formNamePlaceholder: "Your name",
+    formEmail: "Email",
+    formEmailPlaceholder: "you@email.com",
+    formMessage: "Message",
+    formMessagePlaceholder: "Write your message...",
+    formSend: "Send message",
+    formSending: "Sending...",
+    formSuccess: "Message sent successfully!",
+    formError: "Something went wrong. Please try again.",
+    orContactVia: "or find me on",
   },
 };
 
