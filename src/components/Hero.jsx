@@ -94,15 +94,15 @@ const Hero = () => {
               className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300"
             >
               <div className="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-4">
-                <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400 mb-1">Stack</p>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400 mb-1">{t("stack")}</p>
                 <p>React, Next.js, Tailwind CSS</p>
               </div>
               <div className="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-4">
-                <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400 mb-1">Focus</p>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400 mb-1">{t("focus")}</p>
                 <p>Clean UI, performance, accessibility</p>
               </div>
               <div className="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-4">
-                <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400 mb-1">Location</p>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400 mb-1">{t("location")}</p>
                 <p>Croatia · Remote friendly</p>
               </div>
             </motion.div>
@@ -114,17 +114,17 @@ const Hero = () => {
           >
             <div className="flex items-center justify-between mb-4">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.16em] text-sky-200/80 mb-1">Featured project</p>
-                <p className="text-sm font-semibold text-slate-50">GenApply · AI Resume Builder</p>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-sky-200/80 mb-1">{t("featuredProject")}</p>
+                <p className="text-sm font-semibold text-slate-50">{t("genapplyTitle")}</p>
               </div>
               <span className="inline-flex items-center rounded-full bg-emerald-500/15 px-3 py-1 text-[11px] font-medium text-emerald-200 border border-emerald-400/40">
-                In production
+                {t("inProduction")}
               </span>
             </div>
 
             <div className="grid grid-cols-1 gap-3 text-[11px] text-slate-200/90">
               <div className="rounded-2xl border border-sky-400/25 bg-sky-950/40 p-3">
-                <p className="mb-1 text-[10px] uppercase tracking-[0.16em] text-sky-200/80">About</p>
+                <p className="mb-1 text-[10px] uppercase tracking-[0.16em] text-sky-200/80">{t("aboutProject")}</p>
                 <p>AI-powered resume builder with live editor, Strapi backend, PostgreSQL and custom Docker + Nginx deployment.</p>
               </div>
               <div className="rounded-2xl border border-slate-600/60 bg-slate-900/60 p-3 flex flex-wrap gap-2">
@@ -136,8 +136,8 @@ const Hero = () => {
 
             <div className="mt-4 flex items-center justify-between">
               <div className="flex flex-col text-[11px] text-slate-300/90">
-                <span>Deployed on VPS · HTTPS</span>
-                <span>SEO optimized · Analytics</span>
+                <span>{t("deployedInfo")}</span>
+                <span>{t("seoInfo")}</span>
               </div>
               <a
                 href="https://genapply.xyz/"
@@ -145,7 +145,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 rounded-full bg-slate-50/95 px-4 py-1.5 text-xs font-semibold text-slate-900 shadow-sm transition hover:bg-white"
               >
-                View live
+                {t("viewLive")}
                 <span className="text-[10px]">↗</span>
               </a>
             </div>

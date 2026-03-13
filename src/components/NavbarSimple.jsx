@@ -17,7 +17,7 @@ const NavbarSimple = () => {
       setOpenNav(false);
       
       // Check which section is in view
-      const sections = ["home", "projects", "about"];
+      const sections = ["home", "projects", "services", "about"];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -81,6 +81,7 @@ const NavbarSimple = () => {
             {[
               { name: t('home'), path: 'home' },
               { name: t('projects'), path: 'projects' },
+              { name: t('services'), path: 'services' },
               { name: t('about'), path: 'about' }
             ].map((item, index) => {
               const isActive = activeSection === item.path;
@@ -143,6 +144,7 @@ const NavbarSimple = () => {
             {[
               { name: t('home'), path: 'home' },
               { name: t('projects'), path: 'projects' },
+              { name: t('services'), path: 'services' },
               { name: t('about'), path: 'about' }
             ].map((item, index) => {
               const isActive = activeSection === item.path;

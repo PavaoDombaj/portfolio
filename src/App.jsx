@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import NavbarSimple from "./components/NavbarSimple";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
+import Services from "./components/Services";
 import CallToAction from "./components/CallToAction";
 import About from "./components/About";
 import Footer from "./components/Footer";
@@ -21,6 +22,7 @@ function App() {
         <div className="w-full">
           <Hero />
           <Projects />
+          <Services />
           <CallToAction />
           <About />
           <Footer />

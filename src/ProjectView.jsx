@@ -143,11 +143,15 @@ const ProjectView = () => {
     slidesToScroll: 1,
     autoplay: project.images.length > 1,
     autoplaySpeed: 3000,
+    waitForAnimate: false,
+    lazyLoad: 'ondemand',
+    initialSlide: 0,
   };
 
   const openImage = (index) => {
-    setSelectedImage(project.images[index]);
-    setCurrentImageIndex(index);
+    const safeIndex = Math.min(Math.max(0, index), project.images.length - 1);
+    setSelectedImage(project.images[safeIndex]);
+    setCurrentImageIndex(safeIndex);
   };
 
   const closeImage = () => {
@@ -156,14 +160,16 @@ const ProjectView = () => {
 
   const nextImage = () => {
     const nextIndex = (currentImageIndex + 1) % project.images.length;
-    setSelectedImage(project.images[nextIndex]);
-    setCurrentImageIndex(nextIndex);
+    const safeNextIndex = Math.min(nextIndex, project.images.length - 1);
+    setSelectedImage(project.images[safeNextIndex]);
+    setCurrentImageIndex(safeNextIndex);
   };
 
   const prevImage = () => {
     const prevIndex = (currentImageIndex - 1 + project.images.length) % project.images.length;
-    setSelectedImage(project.images[prevIndex]);
-    setCurrentImageIndex(prevIndex);
+    const safePrevIndex = Math.min(prevIndex, project.images.length - 1);
+    setSelectedImage(project.images[safePrevIndex]);
+    setCurrentImageIndex(safePrevIndex);
   };
 
   return (

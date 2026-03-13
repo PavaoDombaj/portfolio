@@ -6,6 +6,7 @@ const translations = {
     // Navbar
     home: "Početna",
     projects: "Projekti",
+    services: "Usluge",
     about: "O meni",
 
     // Hero
@@ -14,6 +15,33 @@ const translations = {
     description:
       "Gradim moderne web aplikacije koristeći najnovije tehnologije, dok kontinuirano proširujem svoje znanje.",
     contactButton: "Kontaktiraj me",
+    stack: "Stack",
+    focus: "Fokus",
+    location: "Lokacija",
+    featuredProject: "Istaknuti projekt",
+    genapplyTitle: "GenApply · AI alat za izradu životopisa",
+    inProduction: "U produkciji",
+    aboutProject: "O projektu",
+    deployedInfo: "Postavljeno na VPS · HTTPS",
+    seoInfo: "SEO optimizirano · Analitika",
+    viewLive: "Pogledaj uživo",
+
+    // Services
+    servicesTitle: "Usluge",
+    servicesDescription:
+      "Od ideje i dizajna do razvoja i deploya, izrađujem digitalna rješenja koja izgledaju dobro i rade pouzdano.",
+    serviceWebAppsTitle: "Web aplikacije",
+    serviceWebAppsDescription:
+      "Izrada prilagođenih web aplikacija, dashboarda, portala i SaaS sučelja s fokusom na brzinu, jasnoću i skalabilnost.",
+    serviceFrontendTitle: "Frontend development",
+    serviceFrontendDescription:
+      "Responsive landing stranice i moderna korisnička sučelja u Reactu i Next.js-u, s naglaskom na UX, performanse i pristupačnost.",
+    serviceBackendTitle: "Backend i integracije",
+    serviceBackendDescription:
+      "Povezivanje CMS-a, baza podataka, autentikacije i vanjskih servisa u stabilan sustav koji podržava stvaran proizvod.",
+    serviceDesignTitle: "Grafički dizajn",
+    serviceDesignDescription:
+      "Brending vizuali, mockupi, promo materijali i jednostavna grafika za društvene mreže koja prati proizvod i jača prezentaciju.",
 
     // Projects
     viewProjectsButton:"Pogledaj radove",
@@ -30,14 +58,14 @@ const translations = {
     viewOnGitHub: "Pogledaj na GitHubu",
     backToProjects: "Natrag na projekte",
     projectNotFoundMessage: "Projekt koji tražite ne postoji ili je uklonjen.",
+    cvNotification:
+      "CV trenutno nije dostupan. Ukoliko vas zanima, slobodno me kontaktirajte putem LinkedIn-a ili maila.",
 
     // About
     aboutTitle: "O meni",
     aboutDescription:
       "Pozdrav! Ja sam Pavao Dombaj, rođen 2005. godine. Završio sam školu za tehničara za računalstvo te se bavim razvojem modernih web aplikacija. Posebno me zanimaju frontend tehnologije i izrada funkcionalnih, brzih i pristupačnih sučelja. Trenutno radim na osobnim i freelance projektima te stalno unapređujem svoje vještine.",
     viewCV: "Pogledaj CV",
-    cvNotification:
-      "CV trenutno nije dostupan. Ukoliko vas zanima, slobodno me kontaktirajte putem LinkedIn-a ili maila.",
 
     // Footer
     contactMe: "Kontaktiraj me",
@@ -60,6 +88,7 @@ const translations = {
     // Navbar
     home: "Home",
     projects: "Projects",
+    services: "Services",
     about: "About",
 
     // Hero
@@ -68,6 +97,33 @@ const translations = {
     description:
       "Turning ideas into functional apps while mastering the latest web technologies.",
     contactButton: "Contact me",
+    stack: "Stack",
+    focus: "Focus",
+    location: "Location",
+    featuredProject: "Featured project",
+    genapplyTitle: "GenApply · AI resume builder",
+    inProduction: "In production",
+    aboutProject: "About",
+    deployedInfo: "Hosted on VPS · HTTPS",
+    seoInfo: "SEO optimized · Analytics",
+    viewLive: "View live",
+
+    // Services
+    servicesTitle: "Services",
+    servicesDescription:
+      "From idea and design to development and deployment, I build digital products that look sharp and work reliably.",
+    serviceWebAppsTitle: "Web apps",
+    serviceWebAppsDescription:
+      "Custom web apps, dashboards, portals, and SaaS-style interfaces built with clarity, performance, and scalability in mind.",
+    serviceFrontendTitle: "Frontend development",
+    serviceFrontendDescription:
+      "Responsive landing pages and modern interfaces in React and Next.js, with a strong focus on UX, performance, and accessibility.",
+    serviceBackendTitle: "Backend & integrations",
+    serviceBackendDescription:
+      "CMS, database, authentication, and third-party service integrations combined into a stable foundation for real products.",
+    serviceDesignTitle: "Graphic design",
+    serviceDesignDescription:
+      "Branding visuals, mockups, promo assets, and simple social media graphics that support the product and strengthen presentation.",
 
     // Projects
     viewProjectsButton:"View Projects",
