@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import avatar from "../assets/avatar.webp";
 import projectData from "./ProjectData";
+import PropTypes from "prop-types";
 
 const LoadingScreen = ({ onFinished }) => {
   const [progress, setProgress] = useState(0);
@@ -123,3 +124,7 @@ const LoadingScreen = ({ onFinished }) => {
 };
 
 export default LoadingScreen;
+
+LoadingScreen.propTypes = {
+  onFinished: PropTypes.func.isRequired
+};

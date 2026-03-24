@@ -1,4 +1,5 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
+import PropTypes from "prop-types";
 
 // Prijevodi za hrvatski i engleski
 const translations = {
@@ -24,7 +25,6 @@ const translations = {
     aboutProject: "O projektu",
     deployedInfo: "Postavljeno na VPS · HTTPS",
     seoInfo: "SEO optimizirano · Analitika",
-    viewLive: "Pogledaj uživo",
 
     // Services
     servicesTitle: "Usluge",
@@ -106,7 +106,6 @@ const translations = {
     aboutProject: "About",
     deployedInfo: "Hosted on VPS · HTTPS",
     seoInfo: "SEO optimized · Analytics",
-    viewLive: "View live",
 
     // Services
     servicesTitle: "Services",
@@ -235,4 +234,8 @@ export const LanguageProvider = ({ children }) => {
       {children}
     </LanguageContext.Provider>
   );
+};
+
+LanguageProvider.propTypes = {
+  children: PropTypes.node.isRequired
 };

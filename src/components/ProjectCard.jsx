@@ -1,8 +1,8 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
 import { ArrowUpRight } from "lucide-react";
+import PropTypes from "prop-types";
 
 const ProjectCard = ({ project }) => {
   const { t, language } = useLanguage();
@@ -102,3 +102,21 @@ const ProjectCard = ({ project }) => {
 };
 
 export default ProjectCard;
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    images: PropTypes.array,
+    name: PropTypes.string,
+    redirectUrl: PropTypes.string,
+    translations: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      shortDescription: PropTypes.string.isRequired
+    }).isRequired,
+    technologies: PropTypes.arrayOf(PropTypes.shape({
+      icon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+      iconName: PropTypes.string.isRequired
+    })).isRequired,
+    slug: PropTypes.string.isRequired,
+    github: PropTypes.string
+  }).isRequired
+};

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Blocks, MonitorSmartphone, Database, SwatchBook } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";

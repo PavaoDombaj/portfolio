@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
@@ -33,7 +33,7 @@ const Footer = () => {
       setStatus("success");
       setFormState({ name: "", email: "", message: "" });
       setTimeout(() => setStatus(null), 4000);
-    } catch (error) {
+    } catch {
       setStatus("error");
       setTimeout(() => setStatus(null), 4000);
     }

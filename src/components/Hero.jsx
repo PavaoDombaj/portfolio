@@ -1,4 +1,3 @@
-import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
@@ -43,7 +42,7 @@ const Hero = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-[3.1rem] font-semibold tracking-tight text-slate-50">
                 {t("greeting")} {" "}
                 <span className="underline underline-offset-8 decoration-sky-400/80 decoration-2">
-                  Pavao Dombaj
+                 <br /> Pavao Dombaj
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">

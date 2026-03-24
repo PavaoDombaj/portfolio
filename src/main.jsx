@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
-import Projects from "./components/Projects";
 import ProjectView from "./ProjectView.jsx";
 import { LanguageProvider } from "./context/LanguageContext";
 

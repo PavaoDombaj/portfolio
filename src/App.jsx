@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import NavbarSimple from "./components/NavbarSimple";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";

@@ -1,4 +1,3 @@
-import React from "react";
 import profile from "../assets/avatar.webp";
 import { motion } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
