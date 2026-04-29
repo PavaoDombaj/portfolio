@@ -31,7 +31,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative w-full px-4 sm:px-6 lg:px-10 py-28 bg-[#050816]"
+      className="relative w-full px-5 sm:px-6 lg:px-10 py-24 md:py-28 bg-[#050816]"
     >
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute top-16 left-0 w-72 h-72 bg-cyan-500/15 rounded-full blur-[120px]" />
@@ -41,18 +41,18 @@ const Services = () => {
 
       <div className="max-w-6xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-14 md:mb-16"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-5 md:mb-6">
             <span className="bg-clip-text text-transparent primary-gradient">
               {t("servicesTitle")}
             </span>
           </h2>
-          <p className="text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
             {t("servicesDescription")}
           </p>
         </motion.div>
@@ -70,7 +70,7 @@ const Services = () => {
                 viewport={{ once: true }}
                 className="group rounded-3xl border border-slate-700/70 bg-slate-900/60 backdrop-blur-sm p-6 sm:p-7 hover:border-sky-400/40 hover:shadow-[0_20px_60px_rgba(14,165,233,0.08)] transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sky-500/10 border border-sky-400/20 text-sky-300">
                     <Icon className="w-5 h-5" />
                   </div>

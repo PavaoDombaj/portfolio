@@ -22,7 +22,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-10 overflow-hidden bg-[#050816]"
+      className="relative w-full min-h-[85vh] flex items-center justify-center px-5 sm:px-6 lg:px-10 overflow-hidden bg-[#050816]"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -left-10 top-10 h-64 w-64 rounded-full bg-sky-500/20 blur-[110px]" />
@@ -30,16 +30,16 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[length:22px_22px] opacity-30" />
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto py-20">
+      <div className="relative z-10 w-full max-w-6xl mx-auto py-20 md:py-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] gap-10 lg:gap-14 items-center"
+          className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] gap-12 lg:gap-14 items-center"
         >
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-9 sm:gap-10">
             <motion.div variants={itemVariants} className="space-y-4 max-w-3xl">
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.1rem] font-semibold tracking-tight text-slate-50">
+              <h1 className="text-3xl sm:text-5xl lg:text-[3.1rem] leading-tight font-semibold tracking-tight text-slate-50">
                 {t("greeting")} {" "}
                 <span className="underline underline-offset-8 decoration-sky-400/80 decoration-2">
                  <br /> Pavao Dombaj
@@ -50,17 +50,17 @@ const Hero = () => {
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-6">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6">
               <div className="flex flex-wrap gap-3">
                 <a
                   href="#projects"
-                  className="inline-flex items-center justify-center rounded-full bg-slate-50 text-slate-900 px-6 py-2.5 text-sm font-semibold shadow-sm hover:bg:white transition"
+                  className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-slate-50 text-slate-900 px-6 py-3 text-sm font-semibold shadow-sm hover:bg-white transition"
                 >
                   {t("viewProjectsButton")}
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-600/80 px-6 py-2.5 text-sm font-semibold text-slate-100 hover:border-sky-400/80 hover:text-sky-200 transition"
+                  className="inline-flex w-full sm:w-auto items-center justify-center rounded-full border border-slate-600/80 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-sky-400/80 hover:text-sky-200 transition"
                 >
                   {t("contactButton")}
                 </a>
@@ -90,17 +90,17 @@ const Hero = () => {
 
             <motion.div
               variants={itemVariants}
-              className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300"
+              className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 text-xs text-slate-300"
             >
-              <div className="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-4">
+              <div className="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-5">
                 <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400 mb-1">{t("stack")}</p>
                 <p>React, Next.js, Tailwind CSS</p>
               </div>
-              <div className="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-4">
+              <div className="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-5">
                 <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400 mb-1">{t("focus")}</p>
                 <p>Clean UI, performance, accessibility</p>
               </div>
-              <div className="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-4">
+              <div className="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-5">
                 <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400 mb-1">{t("location")}</p>
                 <p>Croatia · Remote friendly</p>
               </div>
@@ -133,7 +133,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center justify-between">
+            <div className="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex flex-col text-[11px] text-slate-300/90">
                 <span>{t("deployedInfo")}</span>
                 <span>{t("seoInfo")}</span>

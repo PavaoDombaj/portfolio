@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative w-full py-32 px-4 sm:px-6 lg:px-10 bg-[#050816]"
+      className="relative w-full py-24 md:py-32 px-5 sm:px-6 lg:px-10 bg-[#050816]"
     >
       {/* Background gradient effects */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
@@ -19,7 +19,7 @@ const About = () => {
 
       <div className="max-w-6xl mx-auto">
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -40,7 +40,7 @@ const About = () => {
                 <img
                   src={profile}
                   alt="Profile"
-                  className="relative w-80 h-80 object-cover rounded-xl shadow-2xl"
+                  className="relative w-72 h-72 sm:w-80 sm:h-80 object-cover rounded-xl shadow-2xl"
                 />
               </div>
             </div>
@@ -53,13 +53,13 @@ const About = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="text-center lg:text-left space-y-6"
           >
-            <h2 className="text-5xl md:text-6xl font-bold">
+            <h2 className="text-4xl md:text-6xl font-bold">
               <span className="bg-clip-text text-transparent primary-gradient">
                 {t('aboutTitle')}
               </span>
             </h2>
             
-            <p className="text-slate-300 text-lg leading-relaxed">
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed">
               {t('aboutDescription')}
             </p>
           </motion.div>

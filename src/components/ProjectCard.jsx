@@ -33,7 +33,7 @@ const ProjectCard = ({ project }) => {
       </div>
 
       {/* Sadržaj */}
-      <div className="p-6 space-y-4">
+      <div className="p-5 sm:p-6 space-y-4">
         
         {/* Naslov s ikonom */}
         <div className="flex items-start justify-between gap-2">
@@ -71,12 +71,12 @@ const ProjectCard = ({ project }) => {
         </div>
 
         {/* Linkovi - novi stil */}
-        <div className="flex gap-3 pt-2">
+        <div className="flex flex-col sm:flex-row gap-3 pt-2">
           
           {/* Primarni link */}
           <a
             href={`/project/${project.slug}`}
-            className="flex-1 group/btn relative px-4 py-2.5 text-center text-sm rounded-full bg-slate-50 text-slate-900 font-semibold overflow-hidden transition-all duration-300 hover:bg-white shadow-sm"
+            className="w-full sm:flex-1 group/btn relative px-4 py-3 text-center text-sm rounded-full bg-slate-50 text-slate-900 font-semibold overflow-hidden transition-all duration-300 hover:bg-white shadow-sm"
           >
             <span className="relative z-10">{t('viewProject')}</span>
           </a>
@@ -87,7 +87,7 @@ const ProjectCard = ({ project }) => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-full border border-slate-600/80 text-slate-300 hover:border-sky-400/50 hover:text-sky-300 transition-all duration-300 flex items-center justify-center"
+              className="w-full sm:w-auto px-4 py-3 rounded-full border border-slate-600/80 text-slate-300 hover:border-sky-400/50 hover:text-sky-300 transition-all duration-300 flex items-center justify-center"
               title="GitHub"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

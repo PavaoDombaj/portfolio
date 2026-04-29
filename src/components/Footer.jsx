@@ -40,7 +40,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full py-24 px-6 bg-[#050816] backdrop-blur-sm" id="contact">
+    <footer className="relative w-full py-20 md:py-24 px-5 sm:px-6 bg-[#050816] backdrop-blur-sm" id="contact">
       {/* Background gradient effects */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute top-0 left-1/3 w-80 h-80 bg-sky-500/15 rounded-full blur-[120px]"></div>
@@ -56,13 +56,13 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           {/* Header */}
-          <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12 md:mb-14">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-clip-text text-transparent primary-gradient">
                 {t('contactMe')}
               </span>
             </h2>
-            <p className="text-slate-300/90 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-slate-300/90 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
               {t('footerDescription')}
             </p>
           </div>
@@ -130,11 +130,11 @@ const Footer = () => {
               </div>
 
               {/* Submit button + status */}
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-slate-50 text-slate-900 font-semibold text-sm shadow-sm hover:bg-white transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 py-3 rounded-full bg-slate-50 text-slate-900 font-semibold text-sm shadow-sm hover:bg-white transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {status === "sending" ? (
                     <>

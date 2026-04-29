@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="relative w-full px-4 sm:px-6 lg:px-10 py-28 bg-[#050816]"
+      className="relative w-full px-5 sm:px-6 lg:px-10 py-24 md:py-28 bg-[#050816]"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
@@ -23,23 +23,23 @@ const Projects = () => {
 
       <div className="max-w-6xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-14 md:mb-16"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-5 md:mb-6">
             <span className="bg-clip-text text-transparent primary-gradient">
               {t('projectsTitle')}
             </span>
           </h2>
-          <p className="text-lg text-slate-300/90 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-slate-300/90 max-w-2xl mx-auto leading-relaxed">
             {t('projectsDescription')}
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           initial="hidden"
           animate="visible"
           variants={{
