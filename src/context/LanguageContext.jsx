@@ -71,7 +71,7 @@ const translations = {
     contactMe: "Kontaktiraj me",
     footerDescription:
       "Imate pitanje ili želite surađivati? Pošaljite mi poruku!",
-    copyright: "© 2025 Pavao Dombaj. Sva prava pridržana.",
+    copyright: `© ${new Date().getFullYear()} Pavao Dombaj. Sva prava pridržana.`,
     formName: "Ime",
     formNamePlaceholder: "Vaše ime",
     formEmail: "Email",
@@ -151,7 +151,7 @@ const translations = {
     // Footer
     contactMe: "Contact me",
     footerDescription: "Have a question or want to collaborate? Send me a message!",
-    copyright: "© 2025 Pavao Dombaj. All rights reserved.",
+    copyright: `© ${new Date().getFullYear()} Pavao Dombaj. All rights reserved.`,
     formName: "Name",
     formNamePlaceholder: "Your name",
     formEmail: "Email",

@@ -55,9 +55,41 @@ const projectData = [
   ]
 },
   {
+    id: "darioprikolice",
+    slug: "dario-prikolice",
+    order: 3,
+    images: [
+      "/images/darioprikolice/1.png",
+      "/images/darioprikolice/2.png",
+    ],
+    translations: {
+      hr: {
+        name: "Dario Prikolice",
+        shortDescription:
+          "Web stranica za najam auto prikolica i prijevoz — pojedinačne specifikacije, cjenik i kontakt.",
+        description:
+          "Dario Prikolice je web stranica izrađena za obrt koji nudi najam auto prikolica i usluge prijevoza u Koprivnici i okolici. Stranica predstavlja ponudu usluga, jasan cjenik bez skrivenih troškova te pojedinačne stranice za svaku prikolicu s detaljnim specifikacijama — dimenzije, nosivost, LED rasvjeta i primjeri korištenja.\n\nSvaka prikolica ima vlastitu podstranicu s galerijom fotografija, tehničkim podacima i odvojenim cjenikom najma. Početna stranica vodi posjetitelje kroz ponudu, proces najma u tri koraka te dodatne usluge prijevoza robe i selidbi po dogovoru. Aplikacija je izgrađena u Next.js-u s Tailwind CSS-om, optimizirana za SEO i mobilne uređaje, s naglaskom na brzi kontakt (telefon, WhatsApp) i lokalnu vidljivost.\n\nProjekt je objavljen i dostupan na produkciji — uživo na https://darioprikolice.hr/.\n\nUz razvoj web stranice izradio sam i potpuni vizualni identitet firme — logo, tipografiju, paletu boja i grafičke materijale — koji je konzistentno prenesen kroz cijelu stranicu.",
+      },
+      en: {
+        name: "Dario Prikolice",
+        shortDescription:
+          "Website for trailer rental and transport — per-trailer specs, pricing, and contact.",
+        description:
+          "Dario Prikolice is a website built for a business offering car trailer rentals and transport services in Koprivnica and the surrounding area. It presents the service offering, transparent pricing with no hidden fees, and dedicated pages for each trailer with detailed specifications — dimensions, load capacity, LED lighting, and typical use cases.\n\nEach trailer has its own subpage with a photo gallery, technical data, and a separate rental price list. The homepage guides visitors through the fleet, a simple three-step rental process, and additional freight and moving services available on request. The app is built with Next.js and Tailwind CSS, optimized for SEO and mobile devices, with a strong focus on quick contact (phone, WhatsApp) and local visibility.\n\nThe project is live in production at https://darioprikolice.hr/.\n\nAlongside the website, I also created the company’s full visual identity — logo, typography, color palette, and graphic assets — applied consistently across the entire site.",
+      },
+    },
+    redirectUrl: "https://darioprikolice.hr/",
+    github: "",
+    technologies: [
+      { icon: faFigma, iconName: "Figma" },
+      { icon: SiNextdotjs, iconName: "Next.js" },
+      { icon: SiTailwindcss, iconName: "Tailwind CSS" },
+    ],
+  },
+  {
     id: "bookly",
     slug: "bookly",
-    order: 4,
+    order: 5,
     images: [
       "/images/bookly/1.png",
       "/images/bookly/2.jpg",
@@ -135,7 +167,7 @@ This was my first major project and, although it presented a huge challenge for 
   {
     id: "opgsite",
     slug: "opgsite",
-    order: 3,
+    order: 4,
     images: [
       "/images/opgsite/1.png",
       "/images/opgsite/2.png",
